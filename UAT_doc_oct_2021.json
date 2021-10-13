@@ -4111,7 +4111,6 @@
                       {
                         "properties": {
                           "updated_on": {
-                            "category_id": {
                               "type": "object",
                               "properties": {
                                 "clause": {
@@ -4131,7 +4130,6 @@
                                   "type": "array"
                                 }
                               }
-                            }
                           }
                         }
                       },
@@ -4174,15 +4172,6 @@
                         }
                       }
                     ]
-                  },
-                  "fields": {
-                    "type": "array"
-                  },
-                  "saveView": {
-                    "type": "boolean"
-                  },
-                  "moduleId": {
-                    "type": "integer"
                   }
                 },
                 "example": {
