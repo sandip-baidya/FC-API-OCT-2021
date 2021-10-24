@@ -3904,7 +3904,7 @@
           "Segment Categories"
         ],
         "summary": "Retrieve Type-Specific Categories",
-        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve type-specific segment categories from your system. Segment categories are of two types: units and segments. The query parameter <b>associationType</b> accepts either \"units\" or \"segments\" as value.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories?associationType=segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Type-Specific_Categories.PNG\"> <p class=\"western\"></ol></p>",
+        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve type-specific segment categories from your system. Segment categories are of two types: units and segments. The query parameter <b>associationType</b> accepts either \"units\" or \"segments\" as value.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories?associationType=segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Type-Specific_Categories.PNG\"> <p class=\"western\"></ol></p>",
         "operationId": "Retrieve_Type-Specific_Categories",
         "produces": [
           "application/json"
@@ -4245,7 +4245,7 @@
           "Edit Segments"
         ],
         "summary": "Edit Segment",
-        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to edit a segment. Using this request, you will be able to edit a segment's name, categoryId, customSegmentId, accessibility, characterCode and description. Refer to the request body below and the payload example in the right-hand side panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Edit_Segment.png\"></ol>",
+        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to edit a segment. Using this request, you will be able to edit a segment's name, categoryId, customSegmentId, accessibility, characterCode and description. Refer to the request body below and the payload example in the right-hand side panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Edit_Segment.png\"></ol>",
         "consumes": [
           "application/json"
         ],
@@ -4533,7 +4533,7 @@
           "Edit Segments"
         ],
         "summary": "Add Segments To Segment",
-        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of segments to a segment. Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Categort_Id\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Segments_In_Segment.png\"></ol>",
+        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of segments to a segment. Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Categort_Id\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Segments_In_Segment.png\"></ol>",
         "operationId": "Add_Segments_In_Segment",
         "consumes": [
           "application/json"
@@ -4576,7 +4576,7 @@
               "application/json": {
                 "example": {
                   "tenantContext": {
-                    "tenantId": "qamsa6.franconnectqa.net",
+                    "tenantId": "developers.franconnectdemo.net",
                     "userId": "adm"
                   },
                   "data": [
@@ -4616,7 +4616,7 @@
           "Edit Segments"
         ],
         "summary": "Delete Segments From Segment",
-        "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of segments from a segment. Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Categort_Id\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Segments_In_Segment.png\"></ol>",
+        "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of segments from a segment. Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Categort_Id\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>DELETE</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Segments_In_Segment.png\"></ol>",
         "operationId": "Delete_Segments_In_Segment",
         "consumes": [
           "application/json"
@@ -4659,7 +4659,7 @@
               "application/json": {
                 "example": {
                   "tenantContext": {
-                    "tenantId": "qamsa6.franconnectqa.net",
+                    "tenantId": "developers.franconnectdemo.net",
                     "userId": "adm"
                   },
                   "data": [
@@ -4742,7 +4742,7 @@
               "application/json": {
                 "example": {
                   "tenantContext": {
-                    "tenantId": "qamsa6.franconnectqa.net",
+                    "tenantId": "developers.franconnectdemo.net",
                     "userId": "adm"
                   },
                   "data": [
@@ -4784,7 +4784,7 @@
         "Edit Segments"
       ],
       "summary": "Add Units To Segment",
-      "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of units to a segment. Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/units</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Units_In_Segment.png\"></ol>",
+      "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of units to a segment. Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/units</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Units_In_Segment.png\"></ol>",
       "operationId": "Add_Units_In_Segment",
       "consumes": [
         "application/json"
@@ -4869,7 +4869,7 @@
         "Edit Segments"
       ],
       "summary": "Delete Units from Segment",
-      "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of units from a segment. Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/units</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Units_In_Segment.png\"></ol>",
+      "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of units from a segment. Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>DELETE</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/units</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Units_In_Segment.png\"></ol>",
       "operationId": "Delete_Units_In_Segment",
       "consumes": [
         "application/json"
@@ -4912,7 +4912,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -4995,7 +4995,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -5037,7 +5037,7 @@
         "Edit Segments"
       ],
       "summary": "Add Owners To Segment",
-      "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of owners to a segment. To retrieve a list of valid owners, you have to use <u><a href=\"#operation/Retrieve_People\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/owners</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Owners_In_Segment.png\"></ol>",
+      "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to add a list of owners to a segment. To retrieve a list of valid owners, you have to use <u><a href=\"#operation/Retrieve_People\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/owners</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Add_Owners_In_Segment.png\"></ol>",
       "operationId": "Add_Owners_In_Segment",
       "consumes": [
         "application/json"
@@ -5081,7 +5081,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -5122,7 +5122,7 @@
         "Edit Segments"
       ],
       "summary": "Delete Owners from Segment",
-      "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of owners from a segment. To retrieve a list of valid owners, you have to use <u><a href=\"#operation/Retrieve_People\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PUT</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/owners</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Owners_In_Segment.png\"></ol>",
+      "description": "<p class=\"western\">Make a DELETE request to the specified endpoint to delete a list of owners from a segment. To retrieve a list of valid owners, you have to use <u><a href=\"#operation/Retrieve_People\">this</a></u> request. Refer to the request body below and the payload example on the right panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>DELETE</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">[url needs reviewing]]</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.netmanage-segment/v2/segments/{segmentId}/owners</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Delete_Owners_In_Segment.png\"></ol>",
       "operationId": "Delete_Owners_In_Segment",
       "consumes": [
         "application/json"
@@ -5165,7 +5165,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -5248,7 +5248,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -5354,7 +5354,7 @@
             "application/json": {
               "example": {
                 "tenantContext": {
-                    "tenantId": "qamsa6.franconnectqa.net",
+                    "tenantId": "developers.franconnectdemo.net",
                     "userId": "adm"
                 },
                 "data": [
@@ -8705,7 +8705,7 @@
         "application/json": {
           "example": {
             "tenantContext": {
-              "tenantId": "qamsa6.franconnectqa.net",
+              "tenantId": "developers.franconnectdemo.net",
               "userId": "adm"
             },
             "data": [
@@ -8762,7 +8762,7 @@
                 }
               },
               "tenantContext": {
-                "tenantId": "qamsa6.franconnectqa.net",
+                "tenantId": "developers.franconnectdemo.net",
                 "userId": "adm"
               },
               "data": [
@@ -8832,7 +8832,7 @@
         "application/json": {
           "example": {
             "tenantContext": {
-              "tenantId": "qamsa6.franconnectqa.net",
+              "tenantId": "developers.franconnectdemo.net",
               "userId": "adm"
             },
             "data": [
@@ -8875,7 +8875,7 @@
         "application/json": {
           "example": {
             "tenantContext": {
-              "tenantId": "qamsa6.franconnectqa.net",
+              "tenantId": "developers.franconnectdemo.net",
               "userId": "adm"
             },
             "data": [
@@ -8916,7 +8916,7 @@
         "application/json": {
           "example": {
             "tenantContext": {
-              "tenantId": "qamsa6.franconnectqa.net",
+              "tenantId": "developers.franconnectdemo.net",
               "userId": "adm"
             },
             "data": [
@@ -9169,7 +9169,7 @@
               "summary": "Response sample of segment creation using UNITS",
               "value": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -9194,7 +9194,7 @@
               "summary": "Response sample of segment creation using child SEGMENTS",
               "value": {
                 "tenantContext": {
-                  "tenantId": "qamsa6.franconnectqa.net",
+                  "tenantId": "developers.franconnectdemo.net",
                   "userId": "adm"
                 },
                 "data": [
@@ -9225,7 +9225,7 @@
         "application/json": {
           "example": {
             "tenantContext": {
-              "tenantId": "qamsa6.franconnectqa.net",
+              "tenantId": "developers.franconnectdemo.net",
               "userId": "adm"
             },
             "data": [
