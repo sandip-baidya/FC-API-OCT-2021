@@ -7,4 +7,7 @@ What does the 2021-Oct-FC-API documentation contain?
 1. UAT docs: ``UAT_doc_oct_2021.json``
 2. Production docs: ``PROD_doc_oct_2021.json``
 
+1. Search Feature in UAT docs: ``Search_UAT.json``
+2. Search Feature in Production docs: ``Search_PROD.json``
+
 Created and maintaned by Sandip Baidya
