@@ -4369,7 +4369,7 @@
         ],
         "parameters": [
           {
-            "in": "body",
+            "in": "path",
             "name": "segmentId",
             "schema": {
               "type": "integer"
@@ -4458,7 +4458,13 @@
                   "segments": {
                     "type": "array"
                   }
-                }
+                },
+                "required": [
+                  "name",
+                  "customSegmentId",
+                  "accessibility",
+                  "owners"
+                ]
               },
               "examples": {
                 "UNITS": {
