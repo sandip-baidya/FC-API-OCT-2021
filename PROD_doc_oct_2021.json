@@ -136,7 +136,7 @@
       },
       {
         "name": "Operations",
-        "description": "The purpose of the Operations module is to improve operational performance from the brand to the unit level. The FranConnect API allows you create Segments and define segment hierarchies."
+        "description": "The purpose of the Operations module is to improve operational performance from the brand to the unit level. The FranConnect API allows you to create Segments and define segment hierarchies."
       },
       {
         "name": "Segment Categories",
