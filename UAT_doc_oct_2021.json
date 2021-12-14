@@ -143,6 +143,10 @@
       "description": "These API endpoints support operations associated with Segment Categories."
     },
     {
+      "name": "Company",
+      "description": "These API endpoints support operations associated with Companies."
+    },
+    {
       "name": "Segments",
       "description": "These API endpoints support operations associated with Segments."
     },
@@ -222,6 +226,7 @@
         "Memos",
         "Operations",
         "Segment Categories",
+        "Company",
         "Segments",
         "Edit Segments",
         "People",
@@ -3926,6 +3931,33 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/RetrieveTypeSpecificCategoriesResp"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/company-management/v1/companies?view=drop-down" : {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Retrieve Companies",
+        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of companies present in your system. Note that a Company is known as an Entity in Info Manager..</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Companies.png\"></ol>",
+        "operationId": "Retrieve_Companies",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RetrieveCompaniesResp"
           },
           "401": {
             "description": "Unauthorized"
@@ -8748,6 +8780,67 @@
         }
       },
       "description": "Successful"
+    },
+    "RetrieveCompaniesResp": {
+      "content": {
+        "application/json": {
+          "example": {
+            "response" :{
+              "tenantContext": {
+                  "tenantId": "developers.franconnectdemo.net",
+                  "userId": "adm"
+              },
+              "data": [
+                  {
+                      "companyId": "1896871",
+                      "name": "Five Girl's Pretzels, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "4742738",
+                      "name": "Aladdin Sane, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "35456127",
+                      "name": "HanCO Management, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "36387348",
+                      "name": "A & E Pretzels, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "43289823",
+                      "name": "Philly Soft Pretzel Factory Norristown Inc.",
+                      "links": []
+                  },
+                  {
+                      "companyId": "63897281",
+                      "name": "Lahrs Twisted Pretzels, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "85243333",
+                      "name": "PPF Chalfont, LLC",
+                      "links": []
+                  },
+                  {
+                      "companyId": "103685105",
+                      "name": "Dough Twisters Inc",
+                      "links": []
+                  },
+                  {
+                      "companyId": "106213522",
+                      "name": "Columbia AT CORP, INC.",
+                      "links": []
+                  }
+              ]
+          }
+          }
+        }
+      }
     },
     "RetrieveSegmentsResp": {
       "content": {
