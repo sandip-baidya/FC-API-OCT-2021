@@ -4468,6 +4468,7 @@
                 },
                 "required": [
                   "name",
+                  "categoryId",
                   "accessibility",
                   "owners"
                 ]
