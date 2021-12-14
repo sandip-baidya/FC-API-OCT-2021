@@ -4248,6 +4248,43 @@
         }
       }
     },
+    "/manage-segment/v2/segments/{segmentId}/hierarchies": {
+      "get": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Retrieve Child Segments",
+        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve all child segments associated with a parent segment. You must provide a valid <b>segmentId</b> to make a successful request. You can find the <b>segmentId</b> of a segment inside the response body when you retrieve segment(s) through custom filters using this <u><a href=\"#operation/Retrieve_Segments\">request</a></u>. Please note that this endpoint retrieves the whole hierarchy that is associated with a parent segment.</p><table width=\"100%\" class=\"endpoint-table\"><tr><td width=\"25%\"><strong>Operation Name</strong></td><td width=\"1%\" >:</td><td>GET</td></tr><tr><td><strong>Production API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}/hierarchies</td></tr><tr><td><strong>UAT API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}/hierarchies</td></tr></table>The following items must be included in the header of the request:<ol><li><p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p></li><li><p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p></li><li><p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Child_Segments.png\"></ol>",
+        "operationId": "Retrieve_Child_Segments",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "segmentId",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RetrieveChildSegmentsResp"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
     "/manage-segment/v2/segments/{segmentId}": {
       "get": {
         "tags": [
@@ -4350,80 +4387,6 @@
         "responses": {
           "200": {
             "$ref": "#/components/responses/EditSegmentResp"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/manage-segment/v2/categories/{categoryId}/segments": {
-      "get": {
-        "tags": [
-          "Segments"
-        ],
-        "summary": "Retrieve Segments By Category Id",
-        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a specific segment enlisted in your system, by the category it is associated with, through <b>categoryId</b>. You can find all the existing categories inside the response body when you retrieve type-specific segment categories using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u>.</p><table width=\"100%\" class=\"endpoint-table\"><tr><td width=\"25%\"><strong>Operation Name</strong></td><td width=\"1%\" >:</td><td>GET</td></tr><tr><td><strong>Production API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/categories/{categoryId}/segments</td></tr><tr><td><strong>UAT API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories/{categoryId}/segments</td></tr></table>The following items must be included in the header of the request:<ol><li><p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p></li><li><p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p></li><li><p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Segment_By_Categort_Id.png\"></ol>",
-        "operationId": "Retrieve_Segment_By_Categort_Id",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "categoryId",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/RetrieveSegmentByCategoryIdResp"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/manage-segment/v2/segments/{segmentId}/hierarchies": {
-      "get": {
-        "tags": [
-          "Segments"
-        ],
-        "summary": "Retrieve Child Segments",
-        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve all child segments associated with a parent segment. You must provide a valid <b>segmentId</b> to make a successful request. You can find the <b>segmentId</b> of a segment inside the response body when you retrieve segment(s) through custom filters using this <u><a href=\"#operation/Retrieve_Segments\">request</a></u>. Please note that this endpoint retrieves the whole hierarchy that is associated with a parent segment.</p><table width=\"100%\" class=\"endpoint-table\"><tr><td width=\"25%\"><strong>Operation Name</strong></td><td width=\"1%\" >:</td><td>GET</td></tr><tr><td><strong>Production API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}/hierarchies</td></tr><tr><td><strong>UAT API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}/hierarchies</td></tr></table>The following items must be included in the header of the request:<ol><li><p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p></li><li><p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p></li><li><p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Child_Segments.png\"></ol>",
-        "operationId": "Retrieve_Child_Segments",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "segmentId",
-            "schema": {
-              "type": "integer"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/RetrieveChildSegmentsResp"
           },
           "401": {
             "description": "Unauthorized"
@@ -4561,6 +4524,198 @@
         "responses": {
           "201": {
             "$ref": "#/components/responses/CreateSegmentResp"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/manage-segment/v2/categories/{categoryId}/segments": {
+      "get": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Retrieve Segments By Category Id",
+        "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a specific segment enlisted in your system, by the category it is associated with, through <b>categoryId</b>. You can find all the existing categories inside the response body when you retrieve type-specific segment categories using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u>.</p><table width=\"100%\" class=\"endpoint-table\"><tr><td width=\"25%\"><strong>Operation Name</strong></td><td width=\"1%\" >:</td><td>GET</td></tr><tr><td><strong>Production API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/categories/{categoryId}/segments</td></tr><tr><td><strong>UAT API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories/{categoryId}/segments</td></tr></table>The following items must be included in the header of the request:<ol><li><p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p></li><li><p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p></li><li><p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Segment_By_Categort_Id.png\"></ol>",
+        "operationId": "Retrieve_Segment_By_Categort_Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RetrieveSegmentByCategoryIdResp"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/segments/{categoryId}/child-segments?companyId={companyId}": {
+      "post": {
+        "tags": ["Segments"],
+        "summary": "Retrieve Child Segments Based On Company",
+        "description": "<p class=\"western\">Make a POST request to the specified endpoint to retrieve child segments based on a company. This request requires a combination of a valid categoryId and companyId. You can retrieve a categoryId using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u>, whereas a companyId can be retrieved using this <u><a href=\"#operation/Retrieve_Companies\">request</a></u>. Moreover, instead of retrieving a complete list of child segments, you can filter out specific child segments using the contraints field in the request body. Refer to the request body schema below to understand what fields you can pass into constraints. Please note that if you want to retrieve a complete list of child segments, you will need to send an empty request body to make a successful request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/v1/segments/{categoryId}/child-segments?companyId={companyId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/v1/segments/{categoryId}/child-segments?companyId={companyId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Child_Segments_Based_On_Company.png\"></ol>",
+        "operationId": "Retrieve_Child_Segments_Based_On_Company",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "categoryId",
+            "schema": {
+              "type": "integer"
+            },
+            "required": "true"
+          },
+          {
+            "in": "query",
+            "name": "companyId",
+            "schema": {
+              "type": "integer"
+            },
+            "required": "true"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "constraints": {
+                    "type":"object",
+                    "anyOf": [
+                      {
+                        "properties": {
+                          "customSegmentId": {
+                            "type": "object",
+                            "properties": {
+                              "clause": {
+                                "type": "string",
+                                "enum": [
+                                  "IN",
+                                  "NOT_IN"
+                                ]
+                              },
+                              "values": {
+                                "type": "array"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "name": {
+                            "type": "object",
+                            "properties": {
+                              "clause": {
+                                "type": "string",
+                                "enum": [
+                                  "IEQUAL",
+                                  "INOT_EQUAL",
+                                  "ILIKE",
+                                  "NOT_ILIKE"
+                                ]
+                              },
+                              "values": {
+                                "type": "array"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "categoryId": {
+                            "type": "object",
+                            "properties": {
+                              "clause": {
+                                "type": "string",
+                                "enum": [
+                                  "IN",
+                                  "NOT_IN"
+                                ]
+                              },
+                              "values": {
+                                "type": "array"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "properties": {
+                          "characterCode": {
+                            "type": "object",
+                            "properties": {
+                              "clause": {
+                                "type": "string",
+                                "enum": [
+                                  "IEQUAL",
+                                  "INOT_EQUAL",
+                                  "ILIKE",
+                                  "NOT_ILIKE"
+                                ]
+                              },
+                              "values": {
+                                "type": "array"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                    
+                  }
+                },
+                "example": {
+                  "constraints": {
+                      "name": {
+                          "clause": "ILIKE",
+                          "values": [
+                              "J"
+                          ],
+                          "tabName": "segment",
+                          "type": "text"
+                      }
+                  }
+              }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RetrieveChildSegmentsBasedOnCompanyResp"
           },
           "401": {
             "description": "Unauthorized"
@@ -9327,6 +9482,36 @@
         }
       },
       "description": "Created"
+    },
+    "RetrieveChildSegmentsBasedOnCompanyResp":{
+      "content": {
+        "application/json": {
+          "example": {
+            "tenantContext": {
+                "tenantId": "developers.franconnectdemo.net",
+                "userId": "adm"
+            },
+            "errors": null,
+            "data": [
+                {
+                    "tenantId": null,
+                    "links": [],
+                    "errors": null,
+                    "hasErrors": null,
+                    "segmentId": "1900195585",
+                    "name": "Scott Pretzels, LLC",
+                    "categoryName": "State",
+                    "customSegmentId": "17957"
+                }
+            ],
+            "limit": null,
+            "offset": null,
+            "totalRecords": null,
+            "currentPageRecords": null,
+            "totalPages": null
+        }
+        }
+      }
     },
     "EditSegmentResp": {
       "content": {
