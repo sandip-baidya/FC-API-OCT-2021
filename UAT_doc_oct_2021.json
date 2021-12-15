@@ -4326,7 +4326,7 @@
           "Edit Segments"
         ],
         "summary": "Edit Segment",
-        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to edit a segment. Using this request, you will be able to edit a segment's name, categoryId, customSegmentId, accessibility, characterCode and description. Refer to the request body below and the payload example on the right-hand side panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Edit_Segment.png\"></ol>",
+        "description": "<p class=\"western\">Make a PATCH request to the specified endpoint to edit a segment. Using this request, you will be able to edit a segment's name, categoryId, accessibility, characterCode and description. Refer to the request body below and the payload example on the right-hand side panel to understand what data you require to successfully make this request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>PATCH</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Edit_Segment.png\"></ol>",
         "consumes": [
           "application/json"
         ],
@@ -4354,9 +4354,6 @@
                     "type": "string"
                   },
                   "categoryId": {
-                    "type": "string"
-                  },
-                  "customSegmentId": {
                     "type": "string"
                   },
                   "accessibility": {
