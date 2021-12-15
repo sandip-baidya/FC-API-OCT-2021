@@ -4014,9 +4014,6 @@
                       "viewAll": {
                         "type": "boolean"
                       },
-                      "topParents": {
-                        "type": "boolean"
-                      },
                       "sort": {
                         "type": "object",
                         "properties": {
@@ -4029,6 +4026,9 @@
                         }
                       }
                     }
+                  },
+                  "topParents": {
+                    "type": "boolean"
                   },
                   "constraints": {
                     "type": "object",
@@ -4208,26 +4208,26 @@
                 },
                 "example": {
                   "page": {
-                    "pageSize": 20,
-                    "pageId": 0,
-                    "viewAll": false,
-                    "topParents": true,
-                    "sort": {
-                      "direction": "DESC",
-                      "columns": [
-                        "created_on"
-                      ]
-                    }
+                      "pageSize": 20,
+                      "pageId": 0,
+                      "viewAll": false,
+                      "sort": {
+                          "direction": "DESC",
+                          "columns": [
+                              "created_on"
+                          ]
+                      }
                   },
+                  "topParents": true,
                   "constraints": {
-                    "created_on": {
-                      "clause": "ON",
-                      "values": [
-                        "2021-10-04"
-                      ]
-                    }
+                      "createdOn": {
+                          "clause": "ON",
+                          "values": [
+                              "2021-10-04"
+                          ]
+                      }
                   }
-                }
+              }
               }
             }
           }
@@ -9007,80 +9007,105 @@
       "content": {
         "application/json": {
           "example": {
-            "response": {
-              "page": {
+            "page": {
                 "pageId": 0,
                 "pageSize": 20,
-                "totalRecords": 2,
+                "totalRecords": 3,
                 "sort": {
-                  "direction": "DESC",
-                  "columns": [
-                    "created_on"
-                  ]
+                    "direction": "DESC",
+                    "columns": [
+                        "created_on"
+                    ]
                 }
-              },
-              "tenantContext": {
+            },
+            "tenantContext": {
                 "tenantId": "developers.franconnectdemo.net",
                 "userId": "adm"
-              },
-              "data": [
+            },
+            "data": [
                 {
-                  "segmentId": "463912633",
-                  "name": "PPF, LLC",
-                  "associationType": "segments",
-                  "category": {
-                    "categoryId": "574932050520309762",
-                    "categoryName": "STORE-C"
-                  },
-                  "customSegmentId": "SB001",
-                  "createdOn": "2021-10-04T08:40:41Z",
-                  "status": "active",
-                  "segmentType": "static",
-                  "accessibility": "public",
-                  "owners": [
-                    {
-                      "id": "241910148",
-                      "name": "Sarthak Bansal"
-                    }
-                  ],
-                  "links": [
-                    {
-                      "rel": "self",
-                      "action": "get",
-                      "href": "https://api.franconnectqa.net/manage-segment/v2/segments/463912633"
-                    }
-                  ]
+                    "segmentId": "463912633",
+                    "name": "PPF, LLC",
+                    "associationType": "units",
+                    "category": {
+                        "categoryId": "574932050520309762",
+                        "categoryName": "STORE-C"
+                    },
+                    "customSegmentId": "10425",
+                    "createdOn": "2021-10-04T18:10:41Z",
+                    "status": "active",
+                    "segmentType": "static",
+                    "accessibility": "public",
+                    "owners": [
+                        {
+                            "id": "241910148",
+                            "name": "Sarthak Bansal"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "rel": "self",
+                            "action": "get",
+                            "href": "https://api.franconnectqa.net/manage-segment/v2/segments/463912633"
+                        }
+                    ]
                 },
                 {
-                  "segmentId": "733901598",
-                  "name": "The Stoakford, LLC",
-                  "associationType": "units",
-                  "category": {
-                    "categoryId": "574932050520309762",
-                    "categoryName": "STORE-C"
-                  },
-                  "customSegmentId": "SB0001",
-                  "createdOn": "2021-10-04T08:32:58Z",
-                  "status": "active",
-                  "segmentType": "static",
-                  "accessibility": "public",
-                  "owners": [
-                    {
-                      "id": "241910148",
-                      "name": "Sarah Lake"
-                    }
-                  ],
-                  "links": [
-                    {
-                      "rel": "self",
-                      "action": "get",
-                      "href": "https://api.franconnectqa.net/manage-segment/v2/segments/733901598"
-                    }
-                  ]
+                    "segmentId": "733901598",
+                    "name": "The Stoakford, LLC",
+                    "associationType": "units",
+                    "category": {
+                        "categoryId": "574932050520309762",
+                        "categoryName": "STORE-C"
+                    },
+                    "customSegmentId": "8388",
+                    "createdOn": "2021-10-04T18:02:58Z",
+                    "status": "active",
+                    "segmentType": "static",
+                    "accessibility": "public",
+                    "owners": [
+                        {
+                            "id": "241910148",
+                            "name": "Sarthak Bansal"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "rel": "self",
+                            "action": "get",
+                            "href": "https://api.franconnectqa.net/manage-segment/v2/segments/733901598"
+                        }
+                    ]
+                },
+                {
+                    "segmentId": "1871582863",
+                    "name": "A & E Pretzels, LLC",
+                    "associationType": "units",
+                    "category": {
+                        "categoryId": "574809462007660547",
+                        "categoryName": "test comp56"
+                    },
+                    "customSegmentId": "15005",
+                    "createdOn": "2021-10-04T09:47:03Z",
+                    "status": "active",
+                    "segmentType": "static",
+                    "accessibility": "public",
+                    "owners": [
+                        {
+                            "id": "290756926",
+                            "name": "sarthak corp user 4"
+                        }
+                    ],
+                    "links": [
+                        {
+                            "rel": "self",
+                            "action": "get",
+                            "href": "https://api.franconnectqa.net/manage-segment/v2/segments/1871582863"
+                        }
+                    ]
                 }
-              ]
-            }
-          }
+            ]
+        }
         }
       },
       "description": "Successful"
