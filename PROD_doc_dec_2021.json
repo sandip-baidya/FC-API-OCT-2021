@@ -4440,7 +4440,6 @@
                     {
                       "name": "Segment of units",
                       "categoryId": "7887788887878",
-                      "customSegmentId": "Custom-1674",
                       "accessibility": "Public",
                       "characterCode": "UTF-8",
                       "description": "This segment contains units",
@@ -9458,7 +9457,6 @@
                 "data": [
                   {
                     "segmentId": "387567111",
-                    "customSegmentId": "Custom-1674",
                     "name": "Segment of units",
                     "accessibility": "public",
                     "description": "This segment contains units",
