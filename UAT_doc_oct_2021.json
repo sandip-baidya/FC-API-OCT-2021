@@ -690,6 +690,102 @@
         }
       }
     },
+    "activate": {
+        "post": {
+            "tags": [
+                "User"
+            ],
+            "summary": "Activate",
+            "description": "<p class=\"western\">This section contains an example of the Activate operation. This operation can be performed to activate a user. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"20%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>API Endpoint</strong></td> <td>:</td> <td> <context-path> /rest/dataservices/activate?module=admin&subModule=user&xmlString=requiredxmlString&responseType=XML </td> </tr> <tr> <td></td> </tr></table><p class=\"western\">To perform an activate operation using the FranConnect API, you must make a POST request on the request URL. The request URL comprises of the context path followed by the API endpoint mentioned above. The following items must be included in the header of the request:</p><ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>Content-Type as the key and its value in the format “application/x-www-form-urlencoded“.</p> </li></ol><p>The following items must be used as path parameters:</p><ol> <li> <p>The module for which the Update operation is being performed. In this case, the module to be used is “admin”</u>.</p> </li> <li> <p>The sub-module for which the Update operation is being performed. A list of all sub-modules can be retrieved from the “subModule” endpoint mentioned <span style=\"color: #0563c1;\"><u><a href=\"#tag/List-of-Sub-Modules\">here</a></u></span>. In this case, the subModule to be used is “user”.</p> </li> <li> <p>Response type as XML or JSON, depending on the type of response that is desired. If this parameter is not provided, the default response type is XML.</p> </li> <li> <p class=\"western\">xmlString that would contain the attribute names and their values in the request that is to be used to activate a user. In this case,<strong> \"referenceId\"</strong> has been used to activate an existing user. In order to determine the parameter names/ schema, a query operation is to be performed with the corresponding module and sub-module names and the operation as Activate. Details on how the query operation is to be performed is mentioned <u><a href=\"#tag/List-of-Field-Names\">here.</a></u> </li></ol></p><img src=\"images/Admin_ActivateUser.png\">",
+            "consumes": [
+                "application/xml"
+            ],
+            "produces": [
+                "application/xml"
+            ],
+            "requestBody": {
+                "content": {
+                  "application/xml": {
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest><adminUser>\n<referenceId>20217750</referenceId>\n</adminUser>\n</fcRequest>",
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AdminSubModule"
+                      },
+                      "xml": {
+                        "name": "fcRequest",
+                        "wrapped": true
+                      }
+                    }
+                  }
+                },
+                "description": "Admin User Activation object",
+                "required": true
+            },
+            "responses": {
+                "200": {
+                  "$ref": "#/components/responses/ActivateUserResp"
+                },
+                "401": {
+                  "description": "Unauthorized"
+                },
+                "403": {
+                  "description": "Forbidden"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+        }
+    },
+    "deactivate": {
+        "post": {
+            "tags": [
+                "User"
+            ],
+            "summary": "Deactivate",
+            "description": "<p class=\"western\">This section contains an example of the Deactivate operation. This operation can be performed to deactivate a user. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"20%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>API Endpoint</strong></td> <td>:</td> <td> <context-path> /rest/dataservices/deactivate?module=admin&subModule=user&xmlString=requiredxmlString&responseType=XML </td> </tr> <tr> <td></td> </tr></table><p class=\"western\">To perform a deactivate operation using the FranConnect API, you must make a POST request on the request URL. The request URL comprises of the context path followed by the API endpoint mentioned above. The following items must be included in the header of the request:</p><ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>Content-Type as the key and its value in the format “application/x-www-form-urlencoded“.</p> </li></ol><p>The following items must be used as path parameters:</p><ol> <li> <p>The module for which the Update operation is being performed. In this case, the module to be used is “admin”</u>.</p> </li> <li> <p>The sub-module for which the Update operation is being performed. A list of all sub-modules can be retrieved from the “subModule” endpoint mentioned <span style=\"color: #0563c1;\"><u><a href=\"#tag/List-of-Sub-Modules\">here</a></u></span>. In this case, the subModule to be used is “user”.</p> </li> <li> <p>Response type as XML or JSON, depending on the type of response that is desired. If this parameter is not provided, the default response type is XML.</p> </li> <li> <p class=\"western\">xmlString that would contain the attribute names and their values in the request that is to be used to deactivate a user. In this case,<strong> \"referenceId\"</strong> has been used to deactivate an existing user. In order to determine the parameter names/ schema, a query operation is to be performed with the corresponding module and sub-module names and the operation as Deactivate. Details on how the query operation is to be performed is mentioned <u><a href=\"#tag/List-of-Field-Names\">here.</a></u> </li></ol></p><img src=\"images/Admin_DeactivateUser.png\">",
+            "consumes": [
+                "application/xml"
+            ],
+            "produces": [
+                "application/xml"
+            ],
+            "requestBody": {
+                "content": {
+                  "application/xml": {
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest><adminUser>\n<referenceId>20217750</referenceId>\n</adminUser>\n</fcRequest>",
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AdminSubModule"
+                      },
+                      "xml": {
+                        "name": "fcRequest",
+                        "wrapped": true
+                      }
+                    }
+                  }
+                },
+                "description": "Admin User Activation object",
+                "required": true
+            },
+            "responses": {
+                "200": {
+                  "$ref": "#/components/responses/DeactivateUserResp"
+                },
+                "401": {
+                  "description": "Unauthorized"
+                },
+                "403": {
+                  "description": "Forbidden"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+        }
+    },
     "/delete": {
       "post": {
         "tags": [
@@ -7285,6 +7381,23 @@
       },
       "description": "Successful"
     },
+    "ActivateUserResp":{
+        "content": {
+            "application/xml": {
+                "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1483644608</responseId>\n<responseData>\n<adminUser>\n<status>Success</status>\n<referenceId>20217750</referenceId>\n</adminUser>\n</responseData>\n</fcResponse>"
+            }
+        },
+        "description": "Successful"
+    },
+    "DeactivateUserResp": {
+        "content": {
+            "application/xml": {
+                "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1483644608</responseId>\n<responseData>\n<adminUser>\n<status>Success</status>\n<referenceId>20217750</referenceId>\n</adminUser>\n</responseData>\n</fcResponse>"
+            }
+        },
+        "description": "Successful"
+    },
+
     "AdminDeleteUserResp": {
       "content": {
         "application/xml": {
