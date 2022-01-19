@@ -690,7 +690,7 @@
         }
       }
     },
-    "activate": {
+    "/activate": {
         "post": {
             "tags": [
                 "User"
@@ -738,7 +738,7 @@
               }
         }
     },
-    "deactivate": {
+    "/deactivate": {
         "post": {
             "tags": [
                 "User"
