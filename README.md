@@ -4,10 +4,8 @@ This repository contains the latest version of Franconnect API on both productio
 What does the 2021-Oct-FC-API documentation contain?
 - New endpoints under Operations module to work with segments and segment categories
 
-1. UAT docs: ``UAT_doc_oct_2021.json``
-2. Production docs: ``PROD_doc_oct_2021.json``
+1. UAT docs: ``UAT_doc_oct_2021.json`` : UAT remains the same
+2. Production docs: ``PROD_doc_oct_2021.json`` : whereas, production keeps changing. Pick the production file that is the most recent in terms of any changes made
 
-1. Search Feature in UAT docs: ``Search_UAT.json``
-2. Search Feature in Production docs: ``Search_PROD.json``
 
 Created and maintaned by Sandip Baidya
