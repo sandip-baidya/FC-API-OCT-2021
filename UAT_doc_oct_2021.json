@@ -136,11 +136,11 @@
 	  },
 	  {
 		"name": "Operations",
-		"description": "The purpose of the Operations module is to improve operational performance from the brand to the unit level. The FranConnect API allows you to create Segments and define segment hierarchies."
+		"description": "The purpose of the Operations module is to improve operational performance from the brand to the unit level. The FranConnect API allows you to create Segments and define segment hierarchies. <p>In FranConnect API, segments are identified by either their <b>segmentId</b> or <b>customSegmentId</b>. A segmentId is a unique identifier that we store in our FranConnect's database, whereas, a customSegmentId is a unique identifier that a user is able to see at the front-end. Moreover, a customSegmentId is incremental in nature, for eg. segmentA is created with a customSegmentId of 001, then the next segment that gets created, will automatically take a customSegmentId of 002 and so on.</p>"
 	  },
 	  {
 		"name": "Segment Categories",
-		"description": "These API endpoints support operations associated with Segment Categories. <p>In FranConnect API, segments are identified by either their segmentId or customSegmentId. A segmentId is a unique identifier that we store in our FranConnect's database, whereas, a customSegmentId is a unique identifier that a user is able to see at the front-end. Moreover, a customSegmentId is incremental in nature, for eg. segmentA is created with a customSegmentId of 001, then the next segment that gets created, will automatically take a customSegmentId of 002 and so on.</p>"
+		"description": "These API endpoints support operations associated with Segment Categories."
 	  },
 	  {
 		"name": "Company",
@@ -4256,13 +4256,13 @@
 		  }
 		}
 	  },
-	  "/v2/categories/{categoryId}/custom-fields": {
+	  "/manage-segment/v2/categories/{categoryId}/custom-fields": {
 		  "get":{
 			  "tags": [
 				  "Segment Categories"
 			  ],
 			  "summary": "Retrieve Custom Segment Fields",
-			  "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of custom segment fields associated with a segment category, through <b>categoryId</b>. You can find all the existing categories inside the response body when you retrieve type-specific segment categories using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u></p> <table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> </table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Custom_Segment_Fields.png\"> <p class=\"western\"> </p>",
+			  "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of custom segment fields associated with a segment category, through <b>categoryId</b>. You can find all the existing categories inside the response body when you retrieve type-specific segment categories using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request.</a></u></p> <table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> </table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Custom_Segment_Fields.png\"> <p class=\"western\"> </p>",
 			  "operationId": "Retrieve_Custom_Segment_Fields",
 			  "produces": [
 				  "application/json"
@@ -4715,7 +4715,7 @@
 			"Segments"
 		  ],
 		  "summary": "Create Segment",
-		  "description": "<p class=\"western\">Make a POST request to the specified endpoint to create a segment.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint (segment of units)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments?associationType=units</td> </tr> <tr> <td><strong>Production API Endpoint (segment of segments)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments?associationType=segments</td> </tr> <tr> <td><strong>UAT API Endpoint (segment of units)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments?associationType=units</td> </tr> <tr> <td><strong>UAT API Endpoint (segment of segments)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments?associationType=segments</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> <p><img src=\"images/Create_Segment.png\"></p></ol><p class=\"western\"> You can create two kinds of segments in your system. One is made up of \"units\" (also known as franchise locations) while the other one is made up of child \"segments\". If the categoryId of your segment belongs to the lowest level of category hierarchy, your segment will only accept valid \"units\". If your categoryId does not belong to the lowest level of category hierarchy, your segment will accept valid child \"segments\". The type of segment will depend on the value passed into the \"associationType\" query parameter.</p><p class=\"western\"> The following steps describe the process of obtaining data associated with different fields to create a segment of units:<ul> <li> A valid categoryId can be obtained from <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">this</a></u> request by setting query parameter \"associationType\" as units in your hierarchy of categories. </li> <li> A valid companyId can be obtained from <u><a href=\"#operation/Retrieve_Companies\">this</a></u> request.</li> <li> Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. </li> <li>Owners are uniquely identified by userNo, which can be obtained by using <u><a href=\"#operation/Retrieve_People\">this</a></u> request. </li></ul></p><p class=\"western\"> The following steps describe the process of obtaining data associated with different fields to create a segment of child segments:<ul> <li> A valid categoryId can be obtained from <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">this</a></u> request by setting query parameter \"associationType\" as segments in your hierarchy of categories. </li> <li> A valid companyId can be obtained from <u><a href=\"#operation/Retrieve_Companies\">this</a></u> request.</li> <li> Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Category_Id\">this</a></u> request. Moreover, if you're creating a parent segment using a valid companyId, you can retrieve a list of child segments based on that companyId using <u><a href=\"#operation/Retrieve_Child_Segments_Based_On_Company\">this</a></u> request. </li> <li>Owners are uniquely identified by userNo, which can be obtained by using <u><a href=\"#operation/Retrieve_People\">this</a></u> request. </li></ul></p><p class=\"western\"> The panel on the right displays request body and response body samples associated with segment creation using both units and segments. Refer to these examples to better understand how to successfully make these requests.</p>",
+		  "description": "<p class=\"western\">Make a POST request to the specified endpoint to create a segment.</p> <table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint (segment of units)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments?associationType=units</td> </tr> <tr> <td><strong>Production API Endpoint (segment of segments)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments?associationType=segments</td> </tr> <tr> <td><strong>UAT API Endpoint (segment of units)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments?associationType=units</td> </tr> <tr> <td><strong>UAT API Endpoint (segment of segments)</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments?associationType=segments</td> </tr> </table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> <p><img src=\"images/Create_Segment.png\"></p> </ol> <p class=\"western\"> You can create two kinds of segments in your system. One is made up of \"units\" (also known as franchise locations) while the other one is made up of child \"segments\". If the categoryId of your segment belongs to the lowest level of category hierarchy, your segment will only accept valid \"units\". If your categoryId does not belong to the lowest level of category hierarchy, your segment will accept valid child \"segments\". The type of segment will depend on the value passed into the \"associationType\" query parameter.</p> <p class=\"western\"> The following steps describe the process of obtaining data associated with different fields to create a segment of units: <ul> <li> A valid categoryId can be obtained from <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">this</a></u> request by setting query parameter \"associationType\" as units in your hierarchy of categories. </li> <li> A valid companyId can be obtained from <u><a href=\"#operation/Retrieve_Companies\">this</a></u> request.</li> <li> Units are uniquely identified by franchisee_no, which can be obtained for specific locations using <u><a href=\"#operation/Retrieve_Franchise_Number_Specific\">this</a></u> request. </li> <li>Owners are uniquely identified by userNo, which can be obtained by using <u><a href=\"#operation/Retrieve_People\">this</a></u> request. </li> <li>A list of custom segment fields for a specific segment category can be retrieved using <u><a href=\"#operation/Retrieve_Custom_Segment_Fields\">this</a></u> request. All custom segment fields have to be passed into the <b>additionalFields</b> key. </li> </ul> </p> <p class=\"western\"> The following steps describe the process of obtaining data associated with different fields to create a segment of child segments: <ul> <li> A valid categoryId can be obtained from <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">this</a></u> request by setting query parameter \"associationType\" as segments in your hierarchy of categories. </li> <li> A valid companyId can be obtained from <u><a href=\"#operation/Retrieve_Companies\">this</a></u> request.</li> <li> Segments are uniquely identified by segmentId. To retrieve a list of valid segments that belong to a particular child category, you have to use <u><a href=\"#operation/Retrieve_Segment_By_Category_Id\">this</a></u> request. Moreover, if you're creating a parent segment using a valid companyId, you can retrieve a list of child segments based on that companyId using <u><a href=\"#operation/Retrieve_Child_Segments_Based_On_Company\">this</a></u> request. </li> <li>Owners are uniquely identified by userNo, which can be obtained by using <u><a href=\"#operation/Retrieve_People\">this</a></u> request. </li> <li>A list of custom segment fields for a specific segment category can be retrieved using <u><a href=\"#operation/Retrieve_Custom_Segment_Fields\">this</a></u> request. All custom segment fields have to be passed into the <b>additionalFields</b> key. </li> </ul> </p> <p class=\"western\"> The panel on the right displays request body and response body samples associated with segment creation using both units and segments. Refer to these examples to better understand how to successfully make these requests.</p>",
 		  "operationId": "Create_Segment",
 		  "consumes": [
 			"application/json"
@@ -4762,6 +4762,9 @@
 					"characterCode": {
 					  "type": "string"
 					},
+					"additionalFields": {
+						"type": "object"
+					},
 					"description": {
 					  "type": "string"
 					},
@@ -4791,6 +4794,9 @@
 						"categoryId": "7887788887878",
 						"accessibility": "Public",
 						"characterCode": "UTF-8",
+						"additionalFields": {
+							"feedback/suggestions": "This segment of unit needs training"
+						  },
 						"description": "This segment contains units",
 						"owners": [
 						  "1"
@@ -4811,6 +4817,9 @@
 					  "name": "JJ Inc. USA Franchises",
 					  "categoryId": "600258032793812995",
 					  "accessibility": "Public",
+					  "additionalFields": {
+						"feedback/suggestions": "This segment of unit needs training"
+					  },
 					  "description": "This segment contains child segments that were retrieved on the basis of company",
 					  "companyId": "623797605",
 					  "owners": [
@@ -4842,6 +4851,43 @@
 			}
 		  }
 		}
+	  },
+	  "/manage-segment/v2/segments/{segmentId}}/units": {
+		  "get": {
+			  "tags": [
+				  "Segments"
+			  ],
+			  "summary": "Retrieve Units Of A Segment",
+			  "description":"<p class=\"western\">Make a GET request to the specified endpoint to retrieve all the units associated with a segment through its segmentId. You can find the <b>segmentId</b> of a segment inside the response body when you retrieve segment(s) through custom filters using this <u><a href=\"#operation/Retrieve_Segments\">request</a></u>. A list of custom fields from Center Info tab of a franchisee will be retrieved as part of <b>configuredFields</b> object. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}/units</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}/units</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Units_Of_A_Segment.png\"></ol>",
+			  "operationId": "Retrieve_Units_Of_A_Segment",
+			  "produces":[
+				  "application/json"
+			  ],
+			  "parameters": [
+				{
+				  "in": "path",
+				  "name": "segmentId",
+				  "schema": {
+					"type": "integer"
+				  },
+				  "required": true
+				}
+			  ],
+			  "responses": {
+				"200": {
+				  "$ref": "#/components/responses/RetrieveUnitsOfASegmentResp"
+				},
+				"401": {
+				  "description": "Unauthorized"
+				},
+				"403": {
+				  "description": "Forbidden"
+				},
+				"404": {
+				  "description": "Not Found"
+				}
+			  }
+		  }
 	  },
 	  "/manage-segment/v2/categories/{categoryId}/segments": {
 		"get": {
@@ -9600,6 +9646,54 @@
 		},
 		"description": "Successful"
 	  },
+	  "RetrieveUnitsOfASegmentResp":{
+		  "content": {
+			  "application/json": {
+				  "example": {
+					"page": {
+					  "pageId": 0,
+					  "pageSize": 20,
+					  "totalRecords": 3
+					},
+					"tenantContext": {
+					  "tenantId": "qamsa6.franconnectqa.net",
+					  "userId": "adm"
+					},
+					"data": [
+					  {
+						"unitReferenceId": "15050101",
+						"franchiseId": "0250",
+						"centerName": "Harlem Store Front",
+						"status": "4",
+						"configuredFields": [
+						  {
+							"fieldDisplayName": "Test Field",
+							"fieldName": "_testOnQa1931332103",
+							"fieldValue": ""
+						  }
+						],
+						"links": []
+					  },
+					  {
+						"unitReferenceId": "15133242",
+						"franchiseId": "0242",
+						"centerName": "30th Street Septa",
+						"status": "1",
+						"configuredFields": [
+						  {
+							"fieldDisplayName": "Test Field",
+							"fieldName": "_testOnQa1931332103",
+							"fieldValue": "This field has value in it"
+						  }
+						],
+						"links": []
+					  }
+					]
+				  }
+			  }
+		  },
+		  "description": "Successful"
+	  },
 	  "RetrieveSegmentByCategoryIdResp": {
 		"content": {
 		  "application/json": {
@@ -9735,6 +9829,64 @@
 										"name": "Sarthak Regional"
 									}
 								],
+								"units": [
+									{
+										"unitReferenceId": "683813731",
+										"franchiseId": "Franchise mApZNW",
+										"centerName": "Test Center",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "689342253",
+										"franchiseId": "0226",
+										"centerName": "Indiana ND Pretzels",
+										"status": "0",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "695544022",
+										"franchiseId": "Franchise eMPzMi",
+										"centerName": "Test Center",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "699383504",
+										"franchiseId": "9999",
+										"centerName": "",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									}
+								],
 								"links": []
 							},
 							{
@@ -9856,6 +10008,64 @@
 									{
 										"id": "196312889",
 										"name": "15juneuser 15juneuser"
+									}
+								],
+								"units": [
+									{
+										"unitReferenceId": "15029716",
+										"franchiseId": "0192",
+										"centerName": "Winter Haven Walmart",
+										"status": "4",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": "555"
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "15050101",
+										"franchiseId": "0250",
+										"centerName": "Harlem Store Front",
+										"status": "4",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "15133242",
+										"franchiseId": "0242",
+										"centerName": "30th Street Septa",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": "Test Prateek"
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "3756110",
+										"franchiseId": "Franchise LRpjfl",
+										"centerName": "Test Center",
+										"status": "0",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "TEST on QA",
+												"fieldName": "_testOnQa1931332103",
+												"fieldValue": ""
+											}
+										],
+										"links": []
 									}
 								],
 								"links": []
