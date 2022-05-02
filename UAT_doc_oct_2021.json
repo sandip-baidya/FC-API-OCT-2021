@@ -4780,7 +4780,6 @@
 				  },
 				  "required": [
 					"name",
-					"categoryId",
 					"accessibility",
 					"owners"
 				  ]
@@ -9605,43 +9604,77 @@
 	  "RetrieveSegmentBySegmentIdResp": {
 		"content": {
 		  "application/json": {
-			"example": {
-			  "tenantContext": {
-				"tenantId": "developers.franconnectdemo.net",
-				"userId": "adm"
-			  },
-			  "data": [
-				{
-				  "segmentId": "463912633",
-				  "name": "PPF, LLC",
-				  "associationType": "units",
-				  "category": {
-					"categoryId": "574932050520309762",
-					"categoryName": "STORE-C"
-				  },
-				  "customSegmentId": "SB001",
-				  "parentSegmentId": "974628277","parentCustomSegmentId": "33456",
-				  "createdOn": "2021-10-04T12:40:41Z",
-				  "status": "active",
-				  "createdBy": "FranConnect Administrator",
-				  "segmentType": "static",
-				  "accessibility": "public",
-				  "owners": [
-					{
-					  "id": "241910148",
-					  "name": "Sarthak Bansal"
-					}
-				  ],
-				  "links": [
-					{
-					  "rel": "self",
-					  "action": "get",
-					  "href": "https://api.franconnectqa.net/manage-segment/v2/segments/463912633"
-					}
-				  ]
-				}
-			  ]
-			}
+			"example":{
+        
+    "tenantContext": {
+      "tenantId": "qamsa6.franconnectqa.net",
+      "userId": "adm"
+  },
+  "data": [
+      {
+          "parentSegments": [
+              {
+                  "segmentId": "2114603862",
+                  "customSegmentId": "18815",
+                  "name": "Segment December"
+              },
+              {
+                  "segmentId": "334209867",
+                  "customSegmentId": "18830",
+                  "name": "Five Girl's Pretzels"
+              },
+              {
+                  "segmentId": "1577425667",
+                  "customSegmentId": "1777",
+                  "name": "Five Girl's Pretzels, LLC PP 27 SEPT"
+              },
+              {
+                  "segmentId": "951475716",
+                  "customSegmentId": "15280",
+                  "name": "Five Girl's Pretzels, LLC 24sep"
+              },
+              {
+                  "segmentId": "1824176991",
+                  "customSegmentId": "2354",
+                  "name": "Segment October"
+              },
+              {
+                  "segmentId": "311175725",
+                  "customSegmentId": "17498",
+                  "name": "Five Girl's Pretzels, LLC"
+              }
+          ],
+          "segmentId": "269248798",
+          "name": "Sample Test Segment",
+          "associationType": "segments",
+          "category": {
+              "categoryId": "570522678952198148",
+              "categoryName": "Child Company category 1"
+          },
+          "customSegmentId": "1191",
+          "createdOn": "2021-09-24T04:23:37Z",
+          "status": "active",
+          "createdBy": "FranConnect Administrator",
+          "segmentType": "static",
+          "accessibility": "public",
+          "owners": [
+              {
+                  "id": "317935743",
+                  "name": "Sam Grasso"
+              }
+          ],
+          "additionalFields": {},
+          "links": [
+              {
+                  "rel": "self",
+                  "action": "get",
+                  "href": "https://api.franconnectqa.net/manage-segment/v2/segments/269248798"
+              }
+          ]
+      }
+  ]
+
+      }
 		  }
 		},
 		"description": "Successful"
@@ -9748,6 +9781,38 @@
 						"segmentId": "311175725",
 						"childSegments": [
 							{
+								"parentSegments": [
+									{
+										"segmentId": "2114603862",
+										"customSegmentId": "18815",
+										"name": "31DECSEG 10SEPP1"
+									},
+									{
+										"segmentId": "334209867",
+										"customSegmentId": "18830",
+										"name": "Five Girl's Pretzels"
+									},
+									{
+										"segmentId": "1577425667",
+										"customSegmentId": "1777",
+										"name": "Five Girl's Pretzels, LLC PP 27 SEPT"
+									},
+									{
+										"segmentId": "951475716",
+										"customSegmentId": "15280",
+										"name": "Five Girl's Pretzels, LLC 24sep"
+									},
+									{
+										"segmentId": "1824176991",
+										"customSegmentId": "2354",
+										"name": "seg1oct"
+									},
+									{
+										"segmentId": "311175725",
+										"customSegmentId": "17498",
+										"name": "Five Girl's Pretzels, LLC"
+									}
+								],
 								"segmentId": "269248798",
 								"name": "TEST-NI3-24-SEPT CHILD  11TH STREET",
 								"associationType": "segments",
@@ -9755,24 +9820,64 @@
 									"categoryId": "570522678952198148",
 									"categoryName": "Child Company category 1"
 								},
-								"customSegmentId": "876786688",
-								"parentSegmentId": "311175725",
-								"parentCustomSegmentId": "676567",
-								"characterCode": "UTF-8",
+								"customSegmentId": "1191",
 								"createdOn": "2021-09-24T04:23:37Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
 								"segmentType": "static",
 								"accessibility": "public",
+								"additionalFields": {
+									"customSegmentField2": "Test description",
+									"custom_segment_field": "",
+									"customSegmentField3": "Test description"
+									},
 								"owners": [
 									{
 										"id": "317935743",
 										"name": "12corp1 12corp1"
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/269248798"
+									}
+								]
 							},
 							{
+								"parentSegments": [
+									{
+										"segmentId": "1633667283",
+										"customSegmentId": "3702",
+										"name": "Five Girl's Pretzels, LLCaaaaaaaaaaaaaaa"
+									},
+									{
+										"segmentId": "1577425667",
+										"customSegmentId": "1777",
+										"name": "Five Girl's Pretzels, LLC PP 27 SEPT"
+									},
+									{
+										"segmentId": "1945824445",
+										"customSegmentId": "11122",
+										"name": "Five Girl's Pretzels, LLCaaaaaaaaaaaaaaaaaa"
+									},
+									{
+										"segmentId": "1216786251",
+										"customSegmentId": "4660",
+										"name": "Five Girl's Pretzels, LLC2222"
+									},
+									{
+										"segmentId": "1372703799",
+										"customSegmentId": "10038",
+										"name": "Test Expose - 2 by ni3 678"
+									},
+									{
+										"segmentId": "311175725",
+										"customSegmentId": "17498",
+										"name": "Five Girl's Pretzels, LLC"
+									}
+								],
 								"segmentId": "974628277",
 								"name": "11th Street Pretzel Factory, Inc2",
 								"associationType": "segments",
@@ -9780,29 +9885,51 @@
 									"categoryId": "567680123688452099",
 									"categoryName": "International"
 								},
-								"customSegmentId": "23seg",
-								"parentSegmentId": "311175725",
-								"parentCustomSegmentId": "676567",
+								"customSegmentId": "11938",
 								"createdOn": "2021-09-23T11:28:10Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
 								"segmentType": "static",
 								"accessibility": "public",
+								"additionalFields": {
+									"customSegmentField2": "Test description",
+									"custom_segment_field": "",
+									"customSegmentField3": "Test description"
+									},
 								"owners": [
 									{
 										"id": "39698192",
 										"name": "\"First Name 2\" Last Name1"
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/974628277"
+									}
+								]
 							}
 						],
-						"links": []
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/manage-segment/v2/segments/311175725"
+							}
+						]
 					},
 					{
 						"segmentId": "1900195585",
 						"childSegments": [
 							{
+								"parentSegments": [
+									{
+										"segmentId": "1900195585",
+										"customSegmentId": "17982",
+										"name": "Scott Pretzels, LLC"
+									}
+								],
 								"segmentId": "3760996",
 								"name": "Family Pretzels, LLC",
 								"associationType": "units",
@@ -9810,19 +9937,12 @@
 									"categoryId": "567680764276113411",
 									"categoryName": "Store"
 								},
-								"customSegmentId": "25342",
-								"parentSegmentId": "1900195585",
-								"parentCustomSegmentId": "78999",
+								"customSegmentId": "8315",
 								"createdOn": "2021-09-23T11:02:40Z",
 								"status": "active",
 								"createdBy": "Sarthak Bansal",
 								"segmentType": "static",
 								"accessibility": "public",
-								"additionalFields": {
-									"customSegmentField2": "Test description",
-									"custom_segment_field": "",
-									"customSegmentField3": "Test description"
-								  },
 								"owners": [
 									{
 										"id": "2012739873",
@@ -9837,8 +9957,8 @@
 										"status": "1",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": ""
 											}
 										],
@@ -9851,8 +9971,8 @@
 										"status": "0",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": ""
 											}
 										],
@@ -9865,8 +9985,8 @@
 										"status": "1",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": ""
 											}
 										],
@@ -9879,17 +9999,30 @@
 										"status": "1",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": ""
 											}
 										],
 										"links": []
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/3760996"
+									}
+								]
 							},
 							{
+								"parentSegments": [
+									{
+										"segmentId": "1900195585",
+										"customSegmentId": "17982",
+										"name": "Scott Pretzels, LLC"
+									}
+								],
 								"segmentId": "176582280",
 								"name": "CompSegCompany",
 								"associationType": "units",
@@ -9897,9 +10030,7 @@
 									"categoryId": "567680764276113411",
 									"categoryName": "Store"
 								},
-								"customSegmentId": "123232",
-								"parentSegmentId": "1900195585",
-								"parentCustomSegmentId": "78999",
+								"customSegmentId": "2919",
 								"createdOn": "2021-09-17T08:41:15Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
@@ -9911,9 +10042,80 @@
 										"name": "sarthak region test one"
 									}
 								],
-								"links": []
+								"units": [
+									{
+										"unitReferenceId": "15029716",
+										"franchiseId": "0192",
+										"centerName": "Winter Haven Walmart",
+										"status": "4",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": "555"
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "15050101",
+										"franchiseId": "0250",
+										"centerName": "Harlem Store Front",
+										"status": "4",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "15133242",
+										"franchiseId": "0242",
+										"centerName": "30th Street Septa",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": "Test Prateek"
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "3756110",
+										"franchiseId": "Franchise LRpjfl",
+										"centerName": "Test Center",
+										"status": "0",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									}
+								],
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/176582280"
+									}
+								]
 							},
 							{
+								"parentSegments": [
+									{
+										"segmentId": "1900195585",
+										"customSegmentId": "17982",
+										"name": "Scott Pretzels, LLC"
+									}
+								],
 								"segmentId": "176880484",
 								"name": "unit store 2",
 								"associationType": "units",
@@ -9921,19 +10123,12 @@
 									"categoryId": "567680764276113411",
 									"categoryName": "Store"
 								},
-								"customSegmentId": "0102",
-								"parentSegmentId": "1900195585",
-								"parentCustomSegmentId": "78999",
+								"customSegmentId": "6040",
 								"createdOn": "2021-09-14T12:13:24Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
 								"segmentType": "static",
 								"accessibility": "public",
-								"additionalFields": {
-									"customSegmentField2": "",
-									"custom_segment_field": "",
-									"customSegmentField3": ""
-								  },
 								"owners": [
 									{
 										"id": "705537899",
@@ -9944,9 +10139,52 @@
 										"name": "Alessandra Nader"
 									}
 								],
-								"links": []
+								"units": [
+									{
+										"unitReferenceId": "45501966",
+										"franchiseId": "0289",
+										"centerName": "Glen Oaks, NY",
+										"status": "0",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "51877951",
+										"franchiseId": "0196",
+										"centerName": "Vineland Walmart",
+										"status": "4",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									}
+								],
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/176880484"
+									}
+								]
 							},
 							{
+								"parentSegments": [
+									{
+										"segmentId": "1900195585",
+										"customSegmentId": "17982",
+										"name": "Scott Pretzels, LLC"
+									}
+								],
 								"segmentId": "1822544228",
 								"name": "unit store 1",
 								"associationType": "units",
@@ -9954,34 +10192,104 @@
 									"categoryId": "567680764276113411",
 									"categoryName": "Store"
 								},
-								"customSegmentId": "0101",
-								"parentSegmentId": "1900195585",
-								"parentCustomSegmentId": "78999",
+								"customSegmentId": "9338",
 								"createdOn": "2021-09-14T12:09:49Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
 								"segmentType": "static",
 								"accessibility": "public",
-								"additionalFields": {
-									"customSegmentField2": "",
-									"custom_segment_field": "",
-									"customSegmentField3": ""
-								  },
 								"owners": [
 									{
 										"id": "241910148",
 										"name": "Sarthak Bansal"
 									}
 								],
-								"links": []
+								"units": [
+									{
+										"unitReferenceId": "195060284",
+										"franchiseId": "0176",
+										"centerName": "Urbana",
+										"status": "0",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "201982426",
+										"franchiseId": "Op24",
+										"centerName": "Op24",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "24645694",
+										"franchiseId": "Newloc002",
+										"centerName": "Newloc002",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									},
+									{
+										"unitReferenceId": "28540123",
+										"franchiseId": "0266",
+										"centerName": "Inner Harbor Kiosk #2",
+										"status": "1",
+										"configuredFields": [
+											{
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
+												"fieldValue": ""
+											}
+										],
+										"links": []
+									}
+								],
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/1822544228"
+									}
+								]
 							}
 						],
-						"links": []
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/manage-segment/v2/segments/1900195585"
+							}
+						]
 					},
 					{
 						"segmentId": "269248798",
 						"childSegments": [
 							{
+								"parentSegments": [
+									{
+										"segmentId": "269248798",
+										"customSegmentId": "1191",
+										"name": "TEST-NI3-24-SEPT CHILD  11TH STREET"
+									}
+								],
 								"segmentId": "465307109",
 								"name": "TEST-NI3-24-SEPT GRAND CHILD",
 								"description": "TEST Description",
@@ -9990,20 +10298,12 @@
 									"categoryId": "571187103145132034",
 									"categoryName": "Grand Child Category"
 								},
-								"customSegmentId": "3535354354",
-								"parentSegmentId": "269248798",
-								"parentCustomSegmentId": "65657",
-								"characterCode": "UTF-8",
+								"customSegmentId": "6697",
 								"createdOn": "2021-09-24T04:15:24Z",
 								"status": "active",
 								"createdBy": "FranConnect Administrator",
 								"segmentType": "static",
 								"accessibility": "public",
-								"additionalFields": {
-									"customSegmentField2": "",
-									"custom_segment_field": "",
-									"customSegmentField3": ""
-								  },
 								"owners": [
 									{
 										"id": "196312889",
@@ -10018,8 +10318,8 @@
 										"status": "4",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": "555"
 											}
 										],
@@ -10032,51 +10332,47 @@
 										"status": "4",
 										"configuredFields": [
 											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
-												"fieldValue": ""
-											}
-										],
-										"links": []
-									},
-									{
-										"unitReferenceId": "15133242",
-										"franchiseId": "0242",
-										"centerName": "30th Street Septa",
-										"status": "1",
-										"configuredFields": [
-											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
-												"fieldValue": "Test Prateek"
-											}
-										],
-										"links": []
-									},
-									{
-										"unitReferenceId": "3756110",
-										"franchiseId": "Franchise LRpjfl",
-										"centerName": "Test Center",
-										"status": "0",
-										"configuredFields": [
-											{
-												"fieldDisplayName": "Test Field",
-												"fieldName": "_testOnQa1931332103",
+												"fieldDisplayName": "Test Field, for eg. Location Number",
+												"fieldName": "LocationNumber",
 												"fieldValue": ""
 											}
 										],
 										"links": []
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/465307109"
+									}
+								]
 							}
 						],
-						"links": []
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/manage-segment/v2/segments/269248798"
+							}
+						]
 					},
 					{
 						"segmentId": "1022196200",
 						"childSegments": [
 							{
+								"parentSegments": [
+									{
+										"segmentId": "970365649",
+										"customSegmentId": "34635",
+										"name": "Test segment"
+									},
+									{
+										"segmentId": "1022196200",
+										"customSegmentId": "12533",
+										"name": "JRJ Dough, Inc"
+									}
+								],
 								"segmentId": "1900195585",
 								"name": "Scott Pretzels, LLC",
 								"associationType": "segments",
@@ -10084,9 +10380,7 @@
 									"categoryId": "567680617202843651",
 									"categoryName": "State"
 								},
-								"customSegmentId": "32562",
-								"parentSegmentId": "1022196200",
-								"parentCustomSegmentId": "6758",
+								"customSegmentId": "17982",
 								"createdOn": "2021-09-23T11:07:16Z",
 								"status": "active",
 								"createdBy": "Sarthak Bansal",
@@ -10098,15 +10392,54 @@
 										"name": "Sarthak Regional"
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/1900195585"
+									}
+								]
 							}
 						],
-						"links": []
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/manage-segment/v2/segments/1022196200"
+							}
+						]
 					},
 					{
 						"segmentId": "974628277",
 						"childSegments": [
 							{
+								"parentSegments": [
+									{
+										"segmentId": "2090860874",
+										"customSegmentId": "34688",
+										"name": "Five Girl's Pretzels, LLC seg"
+									},
+									{
+										"segmentId": "2077240553",
+										"customSegmentId": "18826",
+										"name": "Aladdin Sane Segment 1"
+									},
+									{
+										"segmentId": "1811247754",
+										"customSegmentId": "9985",
+										"name": "HanCO Management, LLC 16oct"
+									},
+									{
+										"segmentId": "974628277",
+										"customSegmentId": "11938",
+										"name": "11th Street Pretzel Factory, Inc2"
+									},
+									{
+										"segmentId": "1467318297",
+										"customSegmentId": "3297",
+										"name": "KM Pretzels Inc"
+									}
+								],
 								"segmentId": "1022196200",
 								"name": "JRJ Dough, Inc",
 								"associationType": "segments",
@@ -10114,9 +10447,7 @@
 									"categoryId": "567680430438875138",
 									"categoryName": "National"
 								},
-								"customSegmentId": "424",
-								"parentSegmentId": "974628277",
-								"parentCustomSegmentId": "33456",
+								"customSegmentId": "12533",
 								"createdOn": "2021-09-23T11:09:54Z",
 								"status": "active",
 								"createdBy": "Sarthak Bansal",
@@ -10128,10 +10459,22 @@
 										"name": "Sarthak Bansal"
 									}
 								],
-								"links": []
+								"links": [
+									{
+										"rel": "self",
+										"action": "get",
+										"href": "https://api.franconnectqa.net/manage-segment/v2/segments/1022196200"
+									}
+								]
 							}
 						],
-						"links": []
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/manage-segment/v2/segments/974628277"
+							}
+						]
 					}
 				]
 			}
