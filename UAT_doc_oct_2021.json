@@ -523,6 +523,15 @@
 
 		}
 	  },
+	  "/submodule?module=test": {
+		"post": {
+			"tags": [
+				"List of Sub-Modules"
+			],
+			"summary": "Test",
+			"description": "Test desc"
+		}
+	  },
 	  "/query?module=admin&operation=create": {
 		"post": {
 		  "tags": [
