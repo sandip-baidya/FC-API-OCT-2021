@@ -551,7 +551,7 @@
 			"$ref": "#/components/requestBodies/CRMSubModuleArray"
 		  }
 		}
-	  },,
+	  },
 	  "/query?module=admin&operation=create": {
 		"post": {
 		  "tags": [
