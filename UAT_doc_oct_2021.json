@@ -495,7 +495,7 @@
 	  },
 	  "/submodule?module=regional": {
 		"post": {
-			"tag": [
+			"tags": [
 				"Retrieve Sub-Modules"
 			],
 			"summary": "Regional",
