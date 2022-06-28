@@ -1356,7 +1356,7 @@
 			  "requestBody": {
                 "content": {
                   "application/xml": {
-                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalEvents>\n<parentReferenceId>130544557</parentReferenceId>\n<fimDdEventDate>2022-05-20</fimDdEventDate>\n<fimTtEventAuthor>Khubaib</fimTtEventAuthor>\n<fimTtType>Sample Type</fimTtType>\n<fimTaEventSummary>Sample Summary</fimTaEventSummary>\n</regionalEvents>\n</fcRequest>",
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalAreaInfo>\n<parentReferenceId>130544557</parentReferenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<email>test@gmail.com</email>\n</regionalAreaInfo>\n</fcRequest>\n",
                     "schema": {
                       "type": "array",
                       "items": {
@@ -1402,7 +1402,7 @@
 			"requestBody": {
                 "content": {
                   "application/xml": {
-                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\nfcRequest>\n<filter>\n<fimAreaEvents>\n<fimTtEventAuthor>Khubaib</fimTtEventAuthor>\n</fimAreaEvents>\n</filter>\n</fcRequest>\n",
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<filter>\n<areaInfo>\n<referenceId>1375193751</referenceId>\n</areaInfo>\n</filter>\n</fcRequest>\n",
                     "schema": {
                       "type": "array",
                       "items": {
@@ -1448,7 +1448,7 @@
 			"requestBody": {
                 "content": {
                   "application/xml": {
-                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalEvents>\n<referenceId>289133424</referenceId>\n<fimTtEventAuthor>Sandip -- updated</fimTtEventAuthor>\n<fimTaEventSummary>Summary-updated</fimTaEventSummary>\n</regionalEvents>\n</fcRequest>\n",
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalAreaInfo>\n<referenceId>130544557</referenceId>\n<initialFee>15000</initialFee>\n<email>testUpdated@gmail.com</email>\n<initialFeePercentage>50</initialFeePercentage>\n<notes>Updated Notes</notes>\n</regionalAreaInfo>\n</fcRequest>\n",
                     "schema": {
                       "type": "array",
                       "items": {
@@ -1494,7 +1494,7 @@
 			"requestBody": {
                 "content": {
                   "application/xml": {
-                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalEvents>\n<referenceId>1771612170</referenceId></regionalEvents>\n</fcRequest>\n",
+                    "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalAreaInfo>\n<referenceId>1771612170</referenceId><regionalAreaInfo>\n</fcRequest>\n",
                     "schema": {
                       "type": "array",
                       "items": {
@@ -7767,7 +7767,7 @@
       "CreateAreaRegionTabResp": {
         "content": {
             "application/xml": {
-                "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n <responseStatus>Success</responseStatus>\n <responseId>1472880517</responseId>\n <responseData>\n <regionalEvents>\n <status>Success</status>\n <referenceId>289133424</referenceId>\n </regionalEvents>\n </responseData>\n </fcResponse>\n"
+                "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1205701239</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
             }
         },
         "description": "Successful"
@@ -7775,7 +7775,7 @@
 	  "RetrieveAreaRegionTabResp": {
 		"content": {
 			"application/xml": {
-				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1546608770</responseId>\n<responseData>\n<adminAreaRegion>\n<referenceId>130544557</referenceId>\n<areaName>V Region</areaName>\n<regionalEvents>\n<referenceId>289133424</referenceId>\n<fimDdEventDate>2022-05-20</fimDdEventDate>\n<fimTtEventAuthor>Khubaib</fimTtEventAuthor>\n<fimTtType>Type</fimTtType>\n<fimTaEventSummary>Summary</fimTaEventSummary>\n</regionalEvents>\n<regionalEvents>\n<referenceId>2124290379</referenceId>\n<fimDdEventDate>2022-05-20</fimDdEventDate>\n<fimTtEventAuthor>Khubaib</fimTtEventAuthor>\n<fimTtType>Type</fimTtType>\n<fimTaEventSummary>Summary</fimTaEventSummary>\n</regionalEvents>\n</adminAreaRegion>\n</responseData>\n</fcResponse>\n"
+				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>53162373</responseId>\n<responseData>\n<adminAreaRegion>\n<referenceId>130544557</referenceId>\n<areaName>V Region</areaName>\n<regionalAreaInfo>\n<referenceId>1375193751</referenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<approvedDate/>\n<initialFee/>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<consecutive/>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<zipCode/>\n<phone/>\n<extn/>\n<fax/>\n<mobile/>\n<email>test@gmail.com</email>\n<transferFee/>\n<renewalFee/>\n<renewalOptions/>\n<initialFeePercentage/>\n<operatingFeePercentage/>\n<transferFeePercentage/>\n<renewalFeePercentage/>\n<notes/>\n</regionalAreaInfo>\n</adminAreaRegion>\n</responseData>\n</fcResponse>\n"
 			}
 		},
 		"description": "Successful"
@@ -7783,7 +7783,7 @@
 	  "UpdateAreaRegionTabResp": {
 		"content": {
 			"application/xml": {
-				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>868158796</responseId>\n<responseData>\n<regionalEvents>\n<status>Success</status>\n<referenceId>289133424</referenceId>\n</regionalEvents>\n</responseData>\n</fcResponse>\n"
+				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1838934160</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
 			}
 		},
 		"description": "Successful"
@@ -7791,7 +7791,7 @@
 	  "DeleteAreaRegionTabResp": {
 		"content": {
 			"application/xml": {
-				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1188393303</responseId>\n<responseData>\n<regionalEvents>\n<status>Success</status>\n<referenceId>289133424</referenceId>\n</regionalEvents>\n</responseData>\n</fcResponse>\n"
+				"example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>205424275</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
 			}
 		},
 		"description": "Successful"
