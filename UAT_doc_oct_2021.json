@@ -4539,7 +4539,7 @@
                             "example": {
                                 "TEXT": {
                                     "summary": "Text Type Custom Field",
-                                    "value":
+                                    "value":{
                                         [
                                             {
                                                 "fieldName": "Taxpayer Code",
@@ -4558,10 +4558,11 @@
                                                 },
                                             }
                                         ]
+                                    }
                                 },
                                 "TEXT_AREA": {
                                     "summary": "Text Area Custom Field",
-                                    "value":
+                                    "value":{
                                         [
                                             {
                                                 "fieldName": "Additional Notes",
@@ -4579,10 +4580,11 @@
                                                 }
                                             }
                                         ]
+                                    }
                                 },
                                 "DATE": {
                                     "summary": "Date Custom Field",
-                                    "value":
+                                    "value":{
                                         [
                                             {
                                                 "fieldName": "Creation Date",
@@ -4600,10 +4602,11 @@
                                                 }
                                             }
                                         ]
+                                    }
                                 },
                                 "DROP_DOWN": {
                                     "summary": "New Drop-Down Custom Field",
-                                    "value":
+                                    "value":{
                                         [
                                             {
                                                 "fieldName": "Entity Type",
@@ -4637,10 +4640,11 @@
                                                 }
                                             }
                                         ]  
+                                    }
                                 },
                                 "COUNTRY_DROP_DOWN": {
                                     "summary": "Country Drop-Down Custom Field",
-                                    "value":
+                                    "value":{
                                         [
                                             {
                                                 "fieldName": "Country Type Field",
@@ -4658,10 +4662,12 @@
                                                 }
                                             }
                                         ]
+                                    }
                                 },
                                 "STATE_DROP_DOWN": {
                                     "summary": "State Drop-Down Custom Field",
-                                    "value": [
+                                    "value": {
+                                    [
                                         {
                                             "fieldName": "Country Type Field",
                                             "fieldType": "state",
@@ -4678,10 +4684,11 @@
                                             }
                                         }
                                     ]
+                                }
                                 },
                                 "MULTI_SELECT_DROP_DOWN": {
                                     "summary": "Multi-select Drop-Down Custom Field",
-                                    "value": [
+                                    "value": {[
                                         {
                                             "fieldName": "Service Areas",
                                             "fieldType": "multiselect-dropdown",
@@ -4714,10 +4721,11 @@
                                             }
                                         }
                                     ]
+                                }
                                 },
                                 "DOCUMENT": {
                                     "summary": "Document Type Custom Field",
-                                    "value": [
+                                    "value": {[
                                         {
                                             "fieldName": "Audit Template",
                                             "fieldType": "file",
@@ -4734,6 +4742,7 @@
                                             }
                                         }
                                     ]
+                                }
                                 }
                         }
                     }
