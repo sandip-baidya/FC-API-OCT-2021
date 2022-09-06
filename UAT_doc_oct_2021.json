@@ -4535,7 +4535,207 @@
                                         "type": "object"
                                     }
                                 }
-                            }
+                            },
+                            "example": {
+                                "TEXT": {
+                                    "summary": "Text Type Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Taxpayer Code",
+                                                "fieldType": "text",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "textLengthMax": "255",
+                                                    "isMandatory": false
+                                                },
+                                            }
+                                        ]
+                                },
+                                "TEXT_AREA": {
+                                    "summary": "Text Area Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Additional Notes",
+                                                "fieldType": "textArea",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "696609394510530068",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "DATE": {
+                                    "summary": "Date Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Creation Date",
+                                                "fieldType": "date",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "DROP_DOWN": {
+                                    "summary": "New Drop-Down Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Entity Type",
+                                                "fieldType": "dropdown",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                },
+                                                "fieldTypeAttributes": {
+                                                    "options": [
+                                                        {
+                                                            "value": "Other"
+                                                        },
+                                                        {
+                                                            "value": "Limited Partnership"
+                                                        },
+                                                        {
+                                                            "value": "LLC"
+                                                        },
+                                                        {
+                                                            "value": "Individual"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]  
+                                },
+                                "COUNTRY_DROP_DOWN": {
+                                    "summary": "Country Drop-Down Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Country Type Field",
+                                                "fieldType": "country",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "STATE_DROP_DOWN": {
+                                    "summary": "State Drop-Down Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Country Type Field",
+                                            "fieldType": "state",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            }
+                                        }
+                                    ]
+                                },
+                                "MULTI_SELECT_DROP_DOWN": {
+                                    "summary": "Multi-select Drop-Down Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Service Areas",
+                                            "fieldType": "multiselect-dropdown",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            },
+                                            "fieldTypeAttributes": {
+                                                "options": [
+                                                    {
+                                                        "value": "Tully"
+                                                    },
+                                                    {
+                                                        "value": "Reston"
+                                                    },
+                                                    {
+                                                        "value": "Iowa"
+                                                    },
+                                                    {
+                                                        "value": "Herndon"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "DOCUMENT": {
+                                    "summary": "Document Type Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Audit Template",
+                                            "fieldType": "file",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            }
+                                        }
+                                    ]
+                                }
+                        }
                     }
                 }
             }
