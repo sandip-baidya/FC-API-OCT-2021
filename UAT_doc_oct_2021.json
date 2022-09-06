@@ -4497,7 +4497,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "type": "objects",
+                                "type": "object",
                                 "properties": {
                                     "fieldName": {
                                         "type": "string"
