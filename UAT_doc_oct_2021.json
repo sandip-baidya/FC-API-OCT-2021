@@ -146,6 +146,10 @@
 		"name": "Segment Categories",
 		"description": "These API endpoints support operations associated with Segment Categories."
 	  },
+      {
+        "name": "Custom Segment Fields",
+        "description": "These API endpoints support operations associated with Custom Segment Fields"
+      },
 	  {
 		"name": "Company",
 		"description": "These API endpoints support operations associated with Companies."
@@ -235,6 +239,7 @@
 		  "Memos",
 		  "Operations",
 		  "Segment Categories",
+          "Custom Segment Fields",
 		  "Company",
 		  "Segments",
 		  "Edit Segments",
@@ -4472,10 +4477,289 @@
 		  }
 		}
 	  },
+      "/manage-segment/v2/custom-fields": {
+        "post": {
+            "tags": [
+                "Custom Segment Fields"
+            ],
+            "summary": "Create Custom Segment Field",
+            "description": "fss",
+            "operationId": "Create_Custom_Segment_Field",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "objects",
+                                "properties": {
+                                    "fieldName": {
+                                        "type": "string"
+                                    },
+                                    "parent": {
+                                        "type": "object",
+                                        "properties": {
+                                            "apiKey": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "category"
+                                                ]
+                                            },
+                                            "fields": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "id": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "fieldType": {
+                                        "type": "string",
+                                        "enum": ["text", "textArea", "date", "dropdown", "country", "state", "multiselect-dropdown", "file"]
+                                    },
+                                    "fieldAttributes": {
+                                        "type": "object"
+                                    },
+                                    "validations": {
+                                        "type": "object"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "TEXT": {
+                                    "summary": "Text Type Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Taxpayer Code",
+                                                "fieldType": "text",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "textLengthMax": "255",
+                                                    "isMandatory": false
+                                                },
+                                            }
+                                        ]
+                                },
+                                "TEXT_AREA": {
+                                    "summary": "Text Area Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Additional Notes",
+                                                "fieldType": "textArea",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "696609394510530068",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "DATE": {
+                                    "summary": "Date Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Creation Date",
+                                                "fieldType": "date",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "DROP_DOWN": {
+                                    "summary": "New Drop-Down Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Entity Type",
+                                                "fieldType": "dropdown",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                },
+                                                "fieldTypeAttributes": {
+                                                    "options": [
+                                                        {
+                                                            "value": "Other"
+                                                        },
+                                                        {
+                                                            "value": "Limited Partnership"
+                                                        },
+                                                        {
+                                                            "value": "LLC"
+                                                        },
+                                                        {
+                                                            "value": "Individual"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]  
+                                },
+                                "COUNTRY_DROP_DOWN": {
+                                    "summary": "Country Drop-Down Custom Field",
+                                    "value":
+                                        [
+                                            {
+                                                "fieldName": "Country Type Field",
+                                                "fieldType": "country",
+                                                "parent": {
+                                                    "apiKey": "category",
+                                                    "fields": [
+                                                        {
+                                                            "id": "695507570382608298",
+                                                        }
+                                                    ]
+                                                },
+                                                "validations": {
+                                                    "isMandatory": false
+                                                }
+                                            }
+                                        ]
+                                },
+                                "STATE_DROP_DOWN": {
+                                    "summary": "State Drop-Down Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Country Type Field",
+                                            "fieldType": "state",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            }
+                                        }
+                                    ]
+                                },
+                                "MULTI_SELECT_DROP_DOWN": {
+                                    "summary": "Multi-select Drop-Down Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Service Areas",
+                                            "fieldType": "multiselect-dropdown",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            },
+                                            "fieldTypeAttributes": {
+                                                "options": [
+                                                    {
+                                                        "value": "Tully"
+                                                    },
+                                                    {
+                                                        "value": "Reston"
+                                                    },
+                                                    {
+                                                        "value": "Iowa"
+                                                    },
+                                                    {
+                                                        "value": "Herndon"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "DOCUMENT": {
+                                    "summary": "Document Type Custom Field",
+                                    "value": [
+                                        {
+                                            "fieldName": "Audit Template",
+                                            "fieldType": "file",
+                                            "parent": {
+                                                "apiKey": "category",
+                                                "fields": [
+                                                    {
+                                                        "id": "695507570382608298",
+                                                    }
+                                                ]
+                                            },
+                                            "validations": {
+                                                "isMandatory": false
+                                            }
+                                        }
+                                    ]
+                                }
+                        }
+                    }
+                }
+            }
+            },
+            "responses": {
+                "200": {
+                  "$ref": "#/components/responses/CreateCustomSegmentFieldResp"
+                },
+                "401": {
+                  "description": "Unauthorized"
+                },
+                "403": {
+                  "description": "Forbidden"
+                },
+                "404": {
+                  "description": "Not Found"
+                }
+              }
+        }
+      },
 	  "/manage-segment/v2/categories/{categoryId}/custom-fields": {
 		  "get":{
 			  "tags": [
-				  "Segment Categories"
+				  "Custom Segment Fields"
 			  ],
 			  "summary": "Retrieve Custom Segment Fields",
 			  "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of custom segment fields associated with a segment category, through <b>categoryId</b>. You can find all the existing categories inside the response body when you retrieve type-specific segment categories using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request.</a></u></p> <table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/categories/{categoryId}/custom-fields</td> </tr> </table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Custom_Segment_Fields.png\"> <p class=\"western\"> </p>",
@@ -9694,6 +9978,29 @@
 		  },
 		  "description": "Successful"
 	  },
+      "CreateCustomSegmentFieldResp": {
+        "content": {
+            "application/json": {
+                "example": {
+                    "tenantContext": {
+                        "tenantId": "qamsa6.franconnectqa.net",
+                        "userId": "adm"
+                    },
+                    "data": [
+                        {
+                            "createdOn": "2022-09-06 09:19:46.16",
+                            "fieldId": "697012735510054158",
+                            "apiKey": "taxpayerCode428002555",
+                            "fieldName": "Taxpayer Code",
+                            "fieldType": "text",
+                            "status": "active",
+                            "links": []
+                        }
+                    ]
+                }
+            }
+        }
+      },
 	  "RetrieveCompaniesResp": {
 		"content": {
 		  "application/json": {
