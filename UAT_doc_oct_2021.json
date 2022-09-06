@@ -4483,7 +4483,7 @@
                 "Custom Segment Fields"
             ],
             "summary": "Create Custom Segment Field",
-            "description": "fss",
+            "description": "fss re attempt",
             "operationId": "Create_Custom_Segment_Field",
             "consumes": [
                 "application/json"
@@ -4536,7 +4536,7 @@
                                     }
                                 }
                             },
-                            "example": {
+                            "examples": {
                                 "TEXT": {
                                     "summary": "Text Type Custom Field",
                                     "value":
