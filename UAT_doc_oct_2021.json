@@ -4483,7 +4483,7 @@
                 "Custom Segment Fields"
             ],
             "summary": "Create Custom Segment Field",
-            "description": "fss re attempt",
+            "description": "<p> Make a POST request to the specified endpoint to create a custom segment field.A custom segment field is created in reference to a segment category and that is the reason why all the segments bearing a particular category will have the same set of custom fields. </p><p>A custom field has the following 4 primary input fields:-</p><ol> <li> Make Field Mandatory - A boolean value that renders a field mandatory in nature </li> <li> Category - Category refers to the segment category </li> <li> Field Name - The name of the field </li> <li> Field Type - our API supports the following field types, and the payload structure changes with each of them. Read through the entire section to understand how to formulate payload structures corresponding to each field type <ol> <li> <p>Text</p> </li> <li> <p>Text Area</p> </li> <li> Drop-down : while you can create your own custom drop-down values, our system provides the following out-of-box drop-down configurations that you can choose from. The payload structure will change according to the drop-down options you choose from and the details can be found down in the section <ol> <li> Country </li> <li> Country-state </li> </ol> </li> <li> Multi-select drop-down </li> <li> Document </li> </ol> </li></ol><p>Please note that, along with each field type that you configure in the system, you will be able to specify various validation checks on these fields. For eg. you might want to restrict the character limit on your text type field. Details on how to capture validation details in payload can be found down in the section.</p><h2>Payload for creating a Text type field</h2><p>You will need the following keys in your payload to create a text type custom field in the system</p><ol> <li> <p>fieldName : string type field. Enter the name of your custom field name here.<br />for eg.<code> “fieldName&quot;: &quot;Color Code&quot;</code></p> </li> <li> <p>parent : object type field. This is where you can mention a list of categories for which this custom field will be applicable. <br />The <code>parent</code> object accepts the following two keys:</p> <ol> <li> <p><code>apiKey</code> which is where you must mention the entity for which this custom field will be applicable for. Currently, the only entity that we support is a segment category. So, the value for <code>apiKey</code> will be <code>category</code>. If you’ve followed the above steps correctly, your parent object should look something like this:-<br /> </p> <div class="code panel pdl" style="border-width: 1px;"> <div class="codeContent panelContent pdl"> <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&quot;parent&quot;: { &quot;apiKey&quot;: &quot;category&quot;}</pre> </div> </div> <p /> </li> <li> <p><code>fields</code> is an object type field that accepts an array of multiple categoryId for which this custom field will be applicable. Including the <code>fields</code> key, your <code>parent</code> object should look similar to the following example:<br /><br />Please note that each categoryId is passed inside curly brackets in the array and are comma-separated<del> [<strong>Talk to Nitin to change id field to categoryId</strong></del><strong>. Ans: apiKey can change</strong>]<br /> </p> <div class="code panel pdl" style="border-width: 1px;"> <div class="codeContent panelContent pdl"> <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&quot;parent&quot;: { &quot;apiKey&quot;: &quot;category&quot;, &quot;fields&quot;: [ {id: &quot;694796924724709570&quot;}, {id: &quot;679282403834857612&quot;} ]}</pre> </div> </div> </li> </ol> </li> <li> <p><code>fieldType</code> : is a string type field that tells the system what type of field it is. In our case, this is a text type field:<br /></p> <div class="code panel pdl" style="border-width: 1px;"> <div class="codeContent panelContent pdl"> <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&quot;fieldType&quot; : &quot;text&quot;</pre> </div> </div> </li> <li> <p><code>validations</code> : is an array type field that accepts validations on both the custom field itself and the field type. For a text-type field, the following two validations can be used:-</p> <ol> <li> <p>The first validation is called <code>isMandatory</code> and this is common across all field types' payloads because this validation tells the system whether to consider the custom segment field as a mandatory field or not. Including this validation in the payload is not mandatory. Should you wish to not send this validation explicitly, the system will by-default make this custom field “non-mandatory” in nature. </p> </li> <li> <p>The second validation is called <code>textLengthMax</code> and this tells the system about the maximum length that this field can have. The length is measured in characters and our system supports a maximum length of <strong>255 </strong>characters. Please note that if you require a text type field that can hold more than 255 characters, please use the Text Area field type instead. (<strong>is a mandatory field</strong>)<br /><br />If you’ve followed the above instructions on validations, your <code>validation</code> object should look similar to the following:</p> <div class="code panel pdl" style="border-width: 1px;"> <div class="codeContent panelContent pdl"> <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&quot;validations&quot;: { &quot;isMandatory&quot;: false &quot;textLengthMax&quot;: &quot;255&quot;,}</pre> </div> </div> </li> </ol> </li></ol><p>Refer to the complete payload example on the right panel to create your own payload structure</p>",
             "operationId": "Create_Custom_Segment_Field",
             "consumes": [
                 "application/json"
@@ -9988,12 +9988,198 @@
                     },
                     "data": [
                         {
-                            "createdOn": "2022-09-06 09:19:46.16",
-                            "fieldId": "697012735510054158",
-                            "apiKey": "taxpayerCode428002555",
-                            "fieldName": "Taxpayer Code",
+                            "fieldId": "694797104412887234",
+                            "apiKey": "testField",
+                            "fieldName": "Text Field",
                             "fieldType": "text",
                             "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "textLengthMax": "180",
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694797224781023426",
+                            "apiKey": "textAreaField",
+                            "fieldName": "Text Area Field",
+                            "fieldType": "textArea",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798142956112066",
+                            "apiKey": "countryOnlyField",
+                            "fieldName": "Country Only Field",
+                            "fieldType": "country",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "hasDependentField": false
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798299735001282",
+                            "apiKey": "countryField",
+                            "fieldName": "CountryField",
+                            "fieldType": "country",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "hasDependentField": true
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798299751778498",
+                            "apiKey": "stateField",
+                            "fieldName": "State Field",
+                            "fieldType": "state",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "countryFieldId": "694798299735001282"
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696630849621198356",
+                            "apiKey": "creationDate637838117",
+                            "fieldName": "Creation Date",
+                            "fieldType": "date",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696635537640916500",
+                            "apiKey": "entityTypeDrop-down558186133",
+                            "fieldName": "Entity Type Drop-down",
+                            "fieldType": "dropdown",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "options": [
+                                    {
+                                        "id": "1662366051389",
+                                        "value": "Others",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662366045289",
+                                        "value": "LLC",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662366038824",
+                                        "value": "Limited Partnership",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662366028672",
+                                        "value": "Individual",
+                                        "state": 0
+                                    }
+                                ]
+                            },
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696658859204281876",
+                            "apiKey": "countryTypeDrop-Down348944204",
+                            "fieldName": "Country Type Drop-Down",
+                            "fieldType": "country",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "hasDependentField": false
+                            },
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696670214816794088",
+                            "apiKey": "serviceAreas477918464",
+                            "fieldName": "Service Areas",
+                            "fieldType": "multiselect-dropdown",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "options": [
+                                    {
+                                        "id": "1662374319794",
+                                        "value": "Herndon",
+                                        "state": 1
+                                    },
+                                    {
+                                        "id": "1662374309711",
+                                        "value": "Iowa",
+                                        "state": 1
+                                    },
+                                    {
+                                        "id": "1662374305527",
+                                        "value": "Reston",
+                                        "state": 1
+                                    },
+                                    {
+                                        "id": "1662374301860",
+                                        "value": "Houston",
+                                        "state": 0
+                                    }
+                                ]
+                            },
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696671472608871912",
+                            "apiKey": "auditTemplateDoc285802595",
+                            "fieldName": "Audit Template Doc",
+                            "fieldType": "file",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
                             "links": []
                         }
                     ]
