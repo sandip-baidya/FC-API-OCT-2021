@@ -10184,7 +10184,8 @@
                     ]
                 }
             }
-        }
+        },
+		"description": "Successful"
       },
 	  "RetrieveCompaniesResp": {
 		"content": {
@@ -10245,7 +10246,8 @@
 			}
 			}
 		  }
-		}
+		},
+		"description": "Successful"
 	  },
 	  "RetrieveSegmentsResp": {
 		"content": {
@@ -11296,6 +11298,50 @@
 					  }
 				  ]
 			  }
+			  },
+			  "additionalFields": {
+				"summary": "Response sample of segment creation using custom segment fields",
+				"value": [
+					{
+						"categories": {
+							"categoryId": "694796924724709570"
+						},
+						"name": "Filling custom segment fields",
+						"accessibility": "Public",
+						"units": [
+								"127113502", 
+								"174751085", 
+								"192265767"
+						],
+						"additionalFields": {
+							"test111": "A test description (text type field)",
+							"textArea111": "This is a test description for text area type field",
+							"creationDate637838117": "2022-09-14",
+							"singleDRopdown111": [
+								"1661927934271"
+							],
+							"countryOnlyField": {
+								"countryId": "95"
+							},
+							"countryWithState": {
+								"countryId": "39"
+							},
+							"stateWithCountry": {
+								"stateId": "592"
+							},
+							"textAreaTypeField1777669434": "Mandatory text area field",
+							"entityTypeDrop-down558186133": null,
+							"countryTypeDrop-Down348944204": null,
+							"serviceAreas477918464": [
+								"1662374319794",
+								"1662374309711",
+								"1662374305527"
+							]
+						},
+						"segment_type": "UNITS",
+						"segments": []
+					}
+				]
 			  }
 			}
 		  }
