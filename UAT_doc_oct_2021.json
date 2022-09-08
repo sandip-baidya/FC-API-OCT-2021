@@ -10041,6 +10041,144 @@
 		  },
 		  "description": "Successful"
 	  },
+	  "RetrieveCountriesResp": {
+		"content": {
+			"application/json": {
+				"example": {
+					"tenantContext": {
+						"tenantId": "qamsa6.franconnectqa.net",
+						"userId": "adm"
+					},
+					"data": [
+						{
+							"countryId": "2",
+							"countryName": "Afghanistan",
+							"links": []
+						},
+						{
+							"countryId": "4",
+							"countryName": "Algeria",
+							"links": []
+						},
+						{
+							"countryId": "14",
+							"countryName": "Australia",
+							"links": []
+						},
+						{
+							"countryId": "39",
+							"countryName": "Canada",
+							"links": []
+						},
+						{
+							"countryId": "46",
+							"countryName": "China",
+							"links": []
+						},
+						{
+							"countryId": "227",
+							"countryName": "Cyprus",
+							"links": []
+						},
+						{
+							"countryId": "95",
+							"countryName": "India",
+							"links": []
+						},
+						{
+							"countryId": "147",
+							"countryName": "New Zealand",
+							"links": []
+						},
+						{
+							"countryId": "1",
+							"countryName": "USA",
+							"links": []
+						}
+					]
+				}
+			}
+		}
+	  },
+	  "RetrieveStatesOfACountryResp": {
+		"content": {
+			"application/json": {
+				"example": {
+					"tenantContext": {
+						"tenantId": "qamsa6.franconnectqa.net",
+						"userId": "adm"
+					},
+					"data": [
+						{
+							"stateId": "582",
+							"stateName": "Alberta",
+							"links": []
+						},
+						{
+							"stateId": "583",
+							"stateName": "British Columbia",
+							"links": []
+						},
+						{
+							"stateId": "584",
+							"stateName": "Manitoba",
+							"links": []
+						},
+						{
+							"stateId": "585",
+							"stateName": "New Brunswick",
+							"links": []
+						},
+						{
+							"stateId": "586",
+							"stateName": "Newfoundland",
+							"links": []
+						},
+						{
+							"stateId": "587",
+							"stateName": "Northwest Territories",
+							"links": []
+						},
+						{
+							"stateId": "588",
+							"stateName": "Nova Scotia",
+							"links": []
+						},
+						{
+							"stateId": "589",
+							"stateName": "Nunavut",
+							"links": []
+						},
+						{
+							"stateId": "590",
+							"stateName": "Ontario",
+							"links": []
+						},
+						{
+							"stateId": "591",
+							"stateName": "Prince Edward Island",
+							"links": []
+						},
+						{
+							"stateId": "592",
+							"stateName": "Quebec",
+							"links": []
+						},
+						{
+							"stateId": "593",
+							"stateName": "Saskatchewan",
+							"links": []
+						},
+						{
+							"stateId": "594",
+							"stateName": "Yukon Territory",
+							"links": []
+						}
+					]
+				}
+			}
+		}
+	  },
       "CreateCustomSegmentFieldResp": {
         "content": {
             "application/json": {
