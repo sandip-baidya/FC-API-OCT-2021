@@ -4856,8 +4856,7 @@
 				}
 			  }
 			}
-		}
-	  },
+		},
 	  "/company-management/v1/companies?view=drop-down" : {
 		"get": {
 		  "tags": [
