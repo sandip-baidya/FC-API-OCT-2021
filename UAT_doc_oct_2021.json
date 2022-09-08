@@ -4793,6 +4793,71 @@
 			  }
 		  }
 	  },
+	  "/manage-segment/v1/configurations/countries": {
+		"get": {
+			"tags": [
+				"Custom Segment Fields"
+			],
+			"summary": "Retrieve Countries",
+			"description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of countries configured in your system. While a list of countries can be used in many use cases, this particular endpoint has been exposed so that country values can be populated in the country type drop-down available as part of custom segment fields, while creating segments.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v1/configurations/countries</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v1/configurations/countries </td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Countries.png.png\"> <p class=\"western\"> </p>",
+			"operationId": "Retrieve_Countries",
+			"produces": [
+				"application/json"
+			],
+			"responses": {
+				"200": {
+					"$ref": "#/components/responses/RetrieveCountriesResp"
+				  },
+				  "401": {
+					"description": "Unauthorized"
+				  },
+				  "403": {
+					"description": "Forbidden"
+				  },
+				  "404": {
+					"description": "Not Found"
+				  }
+			}
+		}
+	  },
+	  "/manage-segment/v1/configurations/countries/{countryId}/states":{
+		"get": {
+			"tags": [
+				"Custom Segment Fields"
+			],
+			"summary": "Retrieve States of a Country",
+			"description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a list of states for a given country, by passing countryId as a path parameter. A list of countryId can be retrieved by using <u><a href=\"#tag/Retrieve_Countries\">this</a></u> request. Please note that while a list of states can be used in many use cases, this particular endpoint has been exposed so that state values can be populated in the country&state type drop-down available as part of custom segment fields, while creating segments.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v1/configurations/countries/{countryId}/states</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v1/configurations/countries/{countryId}/states </td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_States_Of_A_Country.png\"> <p class=\"western\"> </p>",
+			"operationId": "Retrieve_States_Of_A_Country",
+			"produces": [
+				"application/json"
+			],
+			"parameters": [
+				{
+					"in": "path",
+					"name": "countryId",
+					"schema": {
+						"type": "integer"
+					},
+					"required": true
+				}
+			],
+			"responses": {
+				"200": {
+				  "$ref": "#/components/responses/RetrieveStatesOfACountryResp"
+				},
+				"401": {
+				  "description": "Unauthorized"
+				},
+				"403": {
+				  "description": "Forbidden"
+				},
+				"404": {
+				  "description": "Not Found"
+				}
+			  }
+			}
+		}
+	  },
 	  "/company-management/v1/companies?view=drop-down" : {
 		"get": {
 		  "tags": [
@@ -11301,47 +11366,44 @@
 			  },
 			  "additionalFields": {
 				"summary": "Response sample of segment creation using custom segment fields",
-				"value": [
-					{
-						"categories": {
-							"categoryId": "694796924724709570"
-						},
-						"name": "Filling custom segment fields",
-						"accessibility": "Public",
-						"units": [
-								"127113502", 
-								"174751085", 
-								"192265767"
+				"value": {
+					"categories": {
+						"categoryId": "694796924724709570"
+					},
+					"name": "Filling custom segment fields",
+					"accessibility": "Public",
+					"units": [
+						"127113502",
+						"174751085",
+						"192265767"
+					],
+					"additionalFields": {
+						"test111": "A test description (text type field)",
+						"textArea111": "This is a test description for text area type field",
+						"creationDate637838117": "2022-09-14",
+						"singleDRopdown111": [
+							"1661927934271"
 						],
-						"additionalFields": {
-							"test111": "A test description (text type field)",
-							"textArea111": "This is a test description for text area type field",
-							"creationDate637838117": "2022-09-14",
-							"singleDRopdown111": [
-								"1661927934271"
-							],
-							"countryOnlyField": {
-								"countryId": "95"
-							},
-							"countryWithState": {
-								"countryId": "39"
-							},
-							"stateWithCountry": {
-								"stateId": "592"
-							},
-							"textAreaTypeField1777669434": "Mandatory text area field",
-							"entityTypeDrop-down558186133": null,
-							"countryTypeDrop-Down348944204": null,
-							"serviceAreas477918464": [
-								"1662374319794",
-								"1662374309711",
-								"1662374305527"
-							]
+						"countryOnlyField": {
+							"countryId": "95"
 						},
-						"segment_type": "UNITS",
-						"segments": []
-					}
-				]
+						"countryWithState": {
+							"countryId": "39"
+						},
+						"stateWithCountry": {
+							"stateId": "592"
+						},
+						"textAreaTypeField1777669434": "Mandatory text area field",
+						"entityTypeDrop-down558186133": null,
+						"countryTypeDrop-Down348944204": null,
+						"serviceAreas477918464": [
+							"1662374319794",
+							"1662374309711",
+							"1662374305527"
+						]
+					},
+					"segment_type": "UNITS"
+				}
 			  }
 			}
 		  }
