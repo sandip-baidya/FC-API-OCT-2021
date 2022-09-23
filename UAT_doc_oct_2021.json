@@ -10055,29 +10055,234 @@
 		  "content": {
 			  "application/json": {
 				  "example": {
-					"tenantContext": {
-						"tenantId": "qamsa6.franconnectqa.net",
-						"userId": "adm"
-					},
-					"data": [
-						{
-							"fieldId": "603919631618408451",
-							"apiKey": "feedback",
-							"fieldName": "Feedback",
-							"fieldType": "text",
-							"status": "active",
-							"links": []
-						},
-						{
-							"fieldId": "603919431503970307",
-							"apiKey": "suggestion",
-							"fieldName": "Suggestion",
-							"fieldType": "text",
-							"status": "active",
-							"links": []
-						}
-					]
-				}
+                    "tenantContext": {
+                        "tenantId": "qamsa6.franconnectqa.net",
+                        "userId": "adm"
+                    },
+                    "data": [
+                        {
+                            "fieldId": "694797104412887234",
+                            "apiKey": "taxpayerCode",
+                            "fieldName": "Taxpayer Code",
+                            "fieldType": "text",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "textLengthMax": "180",
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694797224781023426",
+                            "apiKey": "additionalNotes",
+                            "fieldName": "Additional Nodes",
+                            "fieldType": "textArea",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694797399264069826",
+                            "apiKey": "creationDate",
+                            "fieldName": "Creation Date",
+                            "fieldType": "date",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694797937858840770",
+                            "apiKey": "singleDropDownField",
+                            "fieldName": "Single Drop Down Field",
+                            "fieldType": "dropdown",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "options": [
+                                    {
+                                        "id": "1661927934271",
+                                        "value": "Option 2",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1661927928220",
+                                        "value": "Option 1",
+                                        "state": 0
+                                    }
+                                ]
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798142956112066",
+                            "apiKey": "countryOnly",
+                            "fieldName": "Country Only",
+                            "fieldType": "country",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "hasDependentField": false
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798299735001282",
+                            "apiKey": "countryWithState",
+                            "fieldName": "Country With State",
+                            "fieldType": "country",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "hasDependentField": true
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694798299751778498",
+                            "apiKey": "stateWithCountry",
+                            "fieldName": "State With Country",
+                            "fieldType": "state",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "countryFieldId": "694798299735001282"
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694803709938370754",
+                            "apiKey": "multiSelectDropdown",
+                            "fieldName": "Multi Select Dropdown ",
+                            "fieldType": "multiselect-dropdown",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "options": [
+                                    {
+                                        "id": "1661929309237",
+                                        "value": "Option 2",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1661929302970",
+                                        "value": "Option 1",
+                                        "state": 0
+                                    }
+                                ]
+                            },
+                            "validations": {
+                                "isMandatory": true
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "694803916000331970",
+                            "apiKey": "documents",
+                            "fieldName": "Documents",
+                            "fieldType": "file",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696670214816794088",
+                            "apiKey": "serviceAreas477918464",
+                            "fieldName": "Service Areas",
+                            "fieldType": "multiselect-dropdown",
+                            "status": "active",
+                            "fieldTypeAttributes": {
+                                "options": [
+                                    {
+                                        "id": "1662374319794",
+                                        "value": "Herndon",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662374309711",
+                                        "value": "Iowa",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662374305527",
+                                        "value": "Reston",
+                                        "state": 0
+                                    },
+                                    {
+                                        "id": "1662374301860",
+                                        "value": "Houston",
+                                        "state": 0
+                                    }
+                                ]
+                            },
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        },
+                        {
+                            "fieldId": "696671472608871912",
+                            "apiKey": "auditTemplateDoc285802595",
+                            "fieldName": "Audit Template Doc",
+                            "fieldType": "file",
+                            "status": "active",
+                            "fieldTypeAttributes": {},
+                            "validations": {
+                                "isMandatory": false
+                            },
+                            "isSegmentDataAssociated": false,
+                            "canBeDeleted": false,
+                            "deleted": false,
+                            "links": []
+                        }
+                    ]
+                }
 			  }
 		  },
 		  "description": "Successful"
