@@ -5173,7 +5173,7 @@
 			"Segments"
 		  ],
 		  "summary": "Retrieve Segment By Segment Id",
-		  "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a specific segment enlisted in your system, by its segmentId. You can find the <b>segmentId</b> of a segment inside the response body when you retrieve segment(s) through custom filters using this <u><a href=\"#operation/Retrieve_Segments\">request</a></u>.</p><table width=\"100%\" class=\"endpoint-table\"><tr><td width=\"25%\"><strong>Operation Name</strong></td><td width=\"1%\" >:</td><td>GET</td></tr><tr><td><strong>Production API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}</td></tr><tr><td><strong>UAT API Endpoint</strong></td><td>:</td><td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}</td></tr></table>The following items must be included in the header of the request:<ol><li><p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p></li><li><p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p></li><li><p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Segment_By_Segment_Id.png\"></ol>",
+		  "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve a specific segment enlisted in your system, by its segmentId. You can find the <b>segmentId</b> of a segment inside the response body when you retrieve segment(s) through custom filters using this <u><a href=\"#operation/Retrieve_Segments\">request</a></u>.</p> <p> This endpoint primarily accepts a segmentId which is the primary key of a segment that FranConnect stores in its database. However, the <b>customSegmentId</b> can also be leveraged to make this endpoint work. A customSegmentId is the Id of a segment that is shown in the UI. In order to use the customSegmentId inplace of a segmentId, you need to the use the query parameter, namely <b>isCustomId</b> and it set to true, next to the customSegmentId value. <br> for eg: https://skyapi.franconnect.net/manage-segment/v2/segments/41?isCustomId=true <br> Here value 41 is the customSegmentId of a segment. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-segment/v2/segments/{segmentId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-segment/v2/segments/{segmentId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Segment_By_Segment_Id.png\"></ol>",
 		  "operationId": "Retrieve_Segment_By_Segment_Id",
 		  "produces": [
 			"application/json"
@@ -5186,7 +5186,15 @@
 				"type": "integer"
 			  },
 			  "required": true
-			}
+			},
+            {
+                "in": "query",
+                "name": "isCustomId",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": "false"
+              }
 		  ],
 		  "responses": {
 			"200": {
@@ -5480,7 +5488,15 @@
 					"type": "integer"
 				  },
 				  "required": true
-				}
+				},
+                {
+                    "in": "query",
+                    "name": "isCustomId",
+                    "schema": {
+                      "type": "boolean"
+                    },
+                    "required": "false"
+                  }
 			  ],
 			  "responses": {
 				"200": {
@@ -5554,7 +5570,15 @@
 				"type": "integer"
 			  },
 			  "required": true
-			}
+			},
+            {
+                "in": "query",
+                "name": "isCustomId",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": "false"
+              }
 		  ],
 		  "responses": {
 			"200": {
@@ -5749,7 +5773,15 @@
 				"type": "integer"
 			  },
 			  "required": true
-			}
+			},
+            {
+                "in": "query",
+                "name": "isCustomId",
+                "schema": {
+                  "type": "boolean"
+                },
+                "required": "false"
+              }
 		  ],
 		  "requestBody": {
 			"content": {
@@ -6000,7 +6032,15 @@
 			  "type": "integer"
 			},
 			"required": true
-		  }
+		  },
+          {
+            "in": "query",
+            "name": "isCustomId",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": "false"
+          }
 		],
 		"requestBody": {
 		  "content": {
@@ -6253,7 +6293,15 @@
 			  "type": "integer"
 			},
 			"required": true
-		  }
+		  },
+          {
+            "in": "query",
+            "name": "isCustomId",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": "false"
+          }
 		],
 		"requestBody": {
 		  "content": {
