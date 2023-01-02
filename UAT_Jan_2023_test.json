@@ -5836,11 +5836,11 @@
 		  }
 		}
 	  },
-	  "/v1/segments/{categoryId}/child-segments?companyId={companyId}": {
+	  "/manage-segment/v1/segments/{categoryId}/child-segments?companyId={companyId}": {
 		"post": {
 		  "tags": ["Segments"],
 		  "summary": "Retrieve Child Segments Based On Company",
-		  "description": "<p class=\"western\">Make a POST request to the specified endpoint to retrieve child segments based on a company. This request requires a combination of a valid categoryId and companyId. You can retrieve a categoryId using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u>, whereas a companyId can be retrieved using this <u><a href=\"#operation/Retrieve_Companies\">request</a></u>. Moreover, instead of retrieving a complete list of child segments, you can filter out specific child segments using the contraints field in the request body. Refer to the request body schema below to understand what fields you can pass into constraints. Please note that if you want to retrieve a complete list of child segments, you will need to send an empty request body to make a successful request.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/v1/segments/{categoryId}/child-segments?companyId={companyId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/v1/segments/{categoryId}/child-segments?companyId={companyId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Child_Segments_Based_On_Company.png\"></ol>",
+		  "description": "<p class=\"western\">Make a POST request to the specified endpoint to retrieve child segments based on a company. This request requires a combination of a valid categoryId and companyId. You can retrieve a categoryId using this <u><a href=\"#operation/Retrieve_Type-Specific_Categories\">request</a></u>, whereas a companyId can be retrieved using this <u><a href=\"#operation/Retrieve_Companies\">request</a></u>. Moreover, instead of retrieving a complete list of child segments, you can filter out specific child segments using the contraints field in the request body. Refer to the request body schema below to understand what fields you can pass into constraints. Please note that if you want to retrieve a complete list of child segments, you will need to send an empty request body to make a successful request.</p> <p> <b>Note: If the child segments retrieved in the response of this endpoint are associated with other parent companies, then the response will include details of those companies as part of the <b>companyDetails</b> object. The <b>companyDetails</b> object will contain a separate endpoint (as part of the <b>link</b> object) that you can use to further retrieve additional information about the company. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/v1/segments/{categoryId}/child-segments?companyId={companyId} </td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\"> https://skyapi.franconnectuat.net/v1/segments/{categoryId}/child-segments?companyId={companyId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Child_Segments_Based_On_Company.png\"></ol>",
 		  "operationId": "Retrieve_Child_Segments_Based_On_Company",
 		  "consumes": [
 			"application/json"
@@ -9378,113 +9378,78 @@
 		"content": {
 		  "application/json": {
 			"example": {
-			  "response": {
-				"data": [
-				  {
-					"1042018448": {
-					  "franchiseRoyaltyID": "1048618448",
-					  "parentID": "1042018448",
-					  "invoiceNO": "274",
-					  "franchiseeNo": "1812536030",
-					  "taxRateId": "-1",
-					  "totalSales": "1500.0",
-					  "addlAmount": "10.0",
-					  "invoiceAmount": "265.56",
-					  "taxAmount": null,
-					  "invoiceDate": "2020-02-07 04:50:29",
-					  "paymentStatus": "P",
-					  "reportStatus": "I",
-					  "invType": "R",
-					  "amountPaid": "0.0",
-					  "openBalAdv": "0.0",
-					  "openBalTax": "0.0",
-					  "openBalRoy": "0.0",
-					  "addlFees": "10.0",
-					  "openBalAddlFees": "10.0",
-					  "totalQuantity": "0.0",
-					  "Open Royalty": "28.0",
-					  "Royalty": "28.0",
-					  "Open Adv.": "28.0",
-					  "Adv.": "28.0",
-					  "Open Royalty (Area Franchise)": "10.02",
-					  "Royalty (Area Franchise)": "10.02",
-					  "Open Adv. (Area Franchise)": "10.02",
-					  "Adv. (Area Franchise)": "10.02",
-					  "Open Promissory Notes": "161.36",
-					  "Promissory Notes": "171.56",
-					  "Open Late Fee": "28.0",
-					  "Late Fee": "28.0",
-					  "Open Late Fee(Area Franchise)": "10.02",
-					  "Late Fee(Area Franchise)": "10.02",
-					  "lineItems": {},
-					  "totalOpenBalance": "255.36",
-					  "reportNo": "274",
-					  "salesReportID": "1562253270",
-					  "reportPeriodStart": "2019-04-01",
-					  "reportPeriodEnd": "2019-04-30",
-					  "reportSubmitDate": "2020-02-07 04:49:58",
-					  "dateReceived": "2020-02-07",
-					  "reportType": "M",
-					  "versionID": "Category Sales Based Version",
-					  "lastModifiedDate": "2020-05-15 04:30:26"
-					},
-					"1319427657": {
-					  "franchiseRoyaltyID": "1319427497",
-					  "parentID": "1319427657",
-					  "invoiceNO": "263",
-					  "franchiseeNo": "1812536030",
-					  "taxRateId": "-1",
-					  "totalSales": "1000.0",
-					  "addlAmount": "10.0",
-					  "invoiceAmount": "400.89",
-					  "taxAmount": null,
-					  "invoiceDate": "2020-01-31 02:43:06",
-					  "paymentStatus": "C",
-					  "reportStatus": "I",
-					  "invType": "R",
-					  "amountPaid": "-38.0",
-					  "openBalAdv": "0.0",
-					  "openBalTax": "0.0",
-					  "openBalRoy": "0.0",
-					  "addlFees": "10.0",
-					  "openBalAddlFees": "0.0",
-					  "totalQuantity": "0.0",
-					  "Open Royalty": "0.0",
-					  "Royalty": "19.0",
-					  "Open Adv.": "0.0",
-					  "Adv.": "19.0",
-					  "Open Royalty (Area Franchise)": "5.01",
-					  "Royalty (Area Franchise)": "5.01",
-					  "Open Adv. (Area Franchise)": "5.01",
-					  "Adv. (Area Franchise)": "5.01",
-					  "Open Promissory Notes": "0.0",
-					  "Promissory Notes": "333.89",
-					  "Open Late Fee": "0.0",
-					  "Late Fee": "19.0",
-					  "Open Late Fee(Area Franchise)": "5.01",
-					  "Late Fee(Area Franchise)": "5.01",
-					  "lineItems": {},
-					  "totalOpenBalance": "0.0",
-					  "reportNo": "263",
-					  "salesReportID": "155495205",
-					  "reportPeriodStart": "2019-11-01",
-					  "reportPeriodEnd": "2019-11-30",
-					  "reportSubmitDate": "2020-01-31 02:38:20",
-					  "dateReceived": "2020-01-31",
-					  "reportType": "M",
-					  "versionID": "Category Sales Based   Version",
-					  "lastModifiedDate": "2021-01-15 04:10:05"
-					},
-					"response": "Success"
-				  }
-				],
-				"page": {
-				  "size": 100,
-				  "totalRecords": 2,
-				  "totalPages": 1,
-				  "pageId": 0
+				"response": {
+					"data": [
+						{
+							"response": "Success",
+							"1944797722": {
+								"franchiseRoyaltyID": "1944797722",
+								"parentID": "1944797722",
+								"invoiceNO": "291",
+								"franchiseeNo": "1481248948",
+								"taxRateId": "-1",
+								"totalSales": "8000.00",
+								"addlAmount": "300.00",
+								"invoiceAmount": "1100.00",
+								"invoiceDate": "2022-12-21 07:31:05",
+								"paymentStatus": "N",
+								"reportStatus": "I",
+								"invType": "R",
+								"amountPaid": "0.00",
+								"openBalAdv": "0.00",
+								"openBalTax": "0.00",
+								"openBalRoy": "0.00",
+								"addlFees": "300.00",
+								"openBalAddlFees": "300.00",
+								"totalQuantity": "0.00",
+								"lastModifiedDate": "2022-12-21 07:31:05",
+								"taxAmount": null,
+								"Open Royalty": "800.00",
+								"Royalty": "800.00",
+								"Royalty Yearly Cap": "2000.00",
+								"Open Adv.": "0.00",
+								"Adv.": "0.00",
+								"Adv. Yearly Cap": "2000.00",
+								"Open Royalty (Area Franchise)": "0.00",
+								"Royalty (Area Franchise)": "0.00",
+								"Open Adv. (Area Franchise)": "0.00",
+								"Adv. (Area Franchise)": "0.00",
+								"Open Promissory Notes": "0.00",
+								"Promissory Notes": "0.00",
+								"Open Late Fee": "0.00",
+								"Late Fee": "0.00",
+								"Open Late Fee(Area Franchise)": "0.00",
+								"Late Fee(Area Franchise)": "0.00",
+								"Adv. remaining yearly cap": "0.00",
+								"Royalty remaining yearly cap": "400.00",
+								"totalOpenBalance": "1100.00",
+								"lineItems": {},
+								"reportNo": "283",
+								"salesReportID": "610517953",
+								"reportPeriodStart": "2022-03-01",
+								"reportPeriodEnd": "2022-03-31",
+								"reportSubmitDate": "2022-12-21 07:30:46",
+								"dateReceived": "2022-12-21",
+								"reportType": "M",
+								"versionID": "SB-Simple-Monthly",
+								"discountCapId": null,
+								"totalPositiveCategoriesSales": null,
+								"totalNegativeCategoriesSales": null,
+								"totalDiscountAmount": null,
+								"maxDiscountAllowed": null,
+								"applicableDiscount": null,
+								"totalMainAmount": "8000.00",
+								"totalAdjustmentAmount": "0.00"
+							}
+						}
+					],
+					"page": {
+						"size": 500,
+						"totalRecords": 1,
+						"totalPages": 1,
+						"pageId": 0
+					}
 				}
-			  }
 			}
 		  }
 		},
@@ -11849,7 +11814,7 @@
 				"data": [
 					{
 						"companyId": "1896871",
-						"name": "Five Girl's Pretzels, LLC",
+						"name": "Five Grill's Pretzels, LLC",
 						"links": []
 					},
 					{
@@ -12081,7 +12046,7 @@
 		},
 		"description": "Successful"
 	  },
-	  "RetrieveSegmentBySegmentIdResp": {
+"RetrieveSegmentBySegmentIdResp": {
 		"content": {
 		  "application/json": {
 			"example":{
@@ -12094,24 +12059,9 @@
       {
           "parentSegments": [
               {
-                  "segmentId": "2114603862",
-                  "customSegmentId": "18815",
-                  "name": "Segment December"
-              },
-              {
-                  "segmentId": "334209867",
-                  "customSegmentId": "18830",
-                  "name": "Five Girl's Pretzels"
-              },
-              {
-                  "segmentId": "1577425667",
-                  "customSegmentId": "1777",
-                  "name": "Five Girl's Pretzels, LLC PP 27 SEPT"
-              },
-              {
                   "segmentId": "951475716",
                   "customSegmentId": "15280",
-                  "name": "Five Girl's Pretzels, LLC 24sep"
+                  "name": "Five Grill's Pretzels, LLC"
               },
               {
                   "segmentId": "1824176991",
@@ -12121,7 +12071,7 @@
               {
                   "segmentId": "311175725",
                   "customSegmentId": "17498",
-                  "name": "Five Girl's Pretzels, LLC"
+                  "name": "Five Grill's Pretzels, LLC"
               }
           ],
           "segmentId": "269248798",
@@ -12144,6 +12094,17 @@
               }
           ],
           "additionalFields": {},
+		  "companyDetails": {
+			"id": "1066711118",
+			"name": "company123",
+			"links": [
+				{
+					"rel": "self",
+					"action": "get",
+					"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+				}
+			]
+		},
           "links": [
               {
                   "rel": "self",
@@ -12221,6 +12182,17 @@
 				  "name": "PPF, LLC",
 				  "customSegmentId": "SB001",
 				  "categoryName": "STORE-C",
+				  "companyDetails": {
+					"id": "1066711118",
+					"name": "SME Enterprises",
+					"links": [
+						{
+							"rel": "self",
+							"action": "get",
+							"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+						}
+					]
+				},
 				  "links": [
 					{
 					  "rel": "self",
@@ -12234,6 +12206,17 @@
 				  "name": "The Stoakford, LLC",
 				  "customSegmentId": "SB0001",
 				  "categoryName": "STORE-C",
+				  "companyDetails": {
+					"id": "1066711118",
+					"name": "SME Enterprises",
+					"links": [
+						{
+							"rel": "self",
+							"action": "get",
+							"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+						}
+					]
+				},
 				  "links": [
 					{
 					  "rel": "self",
@@ -12270,17 +12253,17 @@
 									{
 										"segmentId": "334209867",
 										"customSegmentId": "18830",
-										"name": "Five Girl's Pretzels"
+										"name": "Five Grill's Pretzels"
 									},
 									{
 										"segmentId": "1577425667",
 										"customSegmentId": "1777",
-										"name": "Five Girl's Pretzels, LLC PP 27 SEPT"
+										"name": "Five Grill's Pretzels, LLC PP 27 SEPT"
 									},
 									{
 										"segmentId": "951475716",
 										"customSegmentId": "15280",
-										"name": "Five Girl's Pretzels, LLC 24sep"
+										"name": "Five Grill's Pretzels, LLC 24sep"
 									},
 									{
 										"segmentId": "1824176991",
@@ -12290,7 +12273,7 @@
 									{
 										"segmentId": "311175725",
 										"customSegmentId": "17498",
-										"name": "Five Girl's Pretzels, LLC"
+										"name": "Five Grill's Pretzels, LLC"
 									}
 								],
 								"segmentId": "269248798",
@@ -12311,6 +12294,17 @@
 									"custom_segment_field": "",
 									"customSegmentField3": "Test description"
 									},
+									"companyDetails": {
+										"id": "1066711118",
+										"name": "SME Enterprises",
+										"links": [
+											{
+												"rel": "self",
+												"action": "get",
+												"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+											}
+										]
+									},
 								"owners": [
 									{
 										"id": "317935743",
@@ -12330,22 +12324,22 @@
 									{
 										"segmentId": "1633667283",
 										"customSegmentId": "3702",
-										"name": "Five Girl's Pretzels, LLCaaaaaaaaaaaaaaa"
+										"name": "Five Grill's Pretzels, LLCaaaaaaaaaaaaaaa"
 									},
 									{
 										"segmentId": "1577425667",
 										"customSegmentId": "1777",
-										"name": "Five Girl's Pretzels, LLC PP 27 SEPT"
+										"name": "Five Grill's Pretzels, LLC PP 27 SEPT"
 									},
 									{
 										"segmentId": "1945824445",
 										"customSegmentId": "11122",
-										"name": "Five Girl's Pretzels, LLCaaaaaaaaaaaaaaaaaa"
+										"name": "Five Grill's Pretzels, LLCaaaaaaaaaaaaaaaaaa"
 									},
 									{
 										"segmentId": "1216786251",
 										"customSegmentId": "4660",
-										"name": "Five Girl's Pretzels, LLC2222"
+										"name": "Five Grill's Pretzels, LLC2222"
 									},
 									{
 										"segmentId": "1372703799",
@@ -12355,7 +12349,7 @@
 									{
 										"segmentId": "311175725",
 										"customSegmentId": "17498",
-										"name": "Five Girl's Pretzels, LLC"
+										"name": "Five Grill's Pretzels, LLC"
 									}
 								],
 								"segmentId": "974628277",
@@ -12897,7 +12891,7 @@
 									{
 										"segmentId": "2090860874",
 										"customSegmentId": "34688",
-										"name": "Five Girl's Pretzels, LLC seg"
+										"name": "Five Grill's Pretzels, LLC seg"
 									},
 									{
 										"segmentId": "2077240553",
@@ -13060,7 +13054,18 @@
 					  "segmentId": "1900195585",
 					  "name": "Scott Pretzels, LLC",
 					  "categoryName": "State",
-					  "customSegmentId": "17957"
+					  "customSegmentId": "17957",
+					  "companyDetails": {
+						"id": "1066711118",
+						"name": "SME Pretzel's Enterprise",
+						"links": [
+							{
+								"rel": "self",
+								"action": "get",
+								"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+							}
+						]
+					}
 				  }
 			  ],
 			  "limit": null,
