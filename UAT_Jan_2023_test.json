@@ -74,6 +74,10 @@
 		"name": "Info Manager",
 		"description": "<p>Using the FranConnect API, you can manage the \"in-development\" and the operational locations in the Info Manager module. Using Create, Retrieve, Update, and Delete API operations, you can manage information that can either be in the location’s main page (in Center Info) or in any of the tabs (such as Real Estate and Mystery Review).</p><p>Note that the following sections explain and provide examples on how to perform these operations on the “Primary Info” tab for locations. Similarly, you can perform these  operations for other tabs as well for locations that are either in-development or have been opened since.</p>"
 	  },
+	  {
+		"name": "Company",
+		"description": "These API endpoints support operations associated with Companies."
+	  },
       {
           "name": "Regional",
           "description": "<p>Using the FranConnect API, you can manage information for different tabs corresponding to any Area-region present in your system. Using Create, Retrieve, Update and Delete API operations, you can manage information corresponding to different Area-regions present in your Regional module."
@@ -154,10 +158,6 @@
         "name": "Custom Segment Fields",
         "description": "These API endpoints support operations associated with Custom Segment Fields"
       },
-	  {
-		"name": "Company",
-		"description": "These API endpoints support operations associated with Companies."
-	  },
 	  {
 		"name": "Segments",
 		"description": "These API endpoints support operations associated with Segments."
@@ -3090,7 +3090,7 @@
 				"Royalties"
 			],
 			"summary": "Link Debit Memos With Invoice",
-			"description": "<p class=\"western\">Make a POST request to the specified endpoint to link debit memo(s) with an invoice. The endpoint must contain a path parameter, called \"franchiseRoyaltyId\". A franchiseRoyaltyId refers to the internal unique reference number of a Royalty Invoice and can be retrieved via <u><a href=\"#operation/Retrieve_Royalty_Invoices\"></a>this</a></u> endpoint.</p><p> Note: One debit memo can only be associated with one invoice at a time, whereas, an invoice can be associated with multiple debit memos. When an already associated debit memo is linked with a different invoice using this endpoint, the debit memo's linkage with the previous invoice will be replaced with the new invoice. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-finance/royalties/{franchiseRoyaltyId}/linkedMemos</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-finance/royalties/{franchiseRoyaltyId}/linkedMemos</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> </li></ol></p><img src=\"images/Link_Debit_Memos_With_Invoice.png\">",
+			"description": "<p class=\"western\">Make a POST request to the specified endpoint to link debit memo(s) with an invoice. The endpoint must contain a path parameter, called \"franchiseRoyaltyId\". A franchiseRoyaltyId refers to the internal unique reference number of a Royalty Invoice and can be retrieved via <u><a href=\"#operation/Retrieve_Royalty_Invoices\">this</a></u> endpoint.</p><p> Note: One debit memo can only be associated with one invoice at a time, whereas, an invoice can be associated with multiple debit memos. When an already associated debit memo is linked with a different invoice using this endpoint, the debit memo's linkage with the previous invoice will be replaced with the new invoice. </p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-finance/royalties/{franchiseRoyaltyId}/linkedMemos</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-finance/royalties/{franchiseRoyaltyId}/linkedMemos</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> </li></ol></p><img src=\"images/Link_Debit_Memos_With_Invoice.png\">",
 			"operationId": "Link_Debit_Memos_With_Invoice",
 			"consumes": [
 				"application/json"
@@ -3929,21 +3929,38 @@
                                         {
                                             "properties": {
                                                 "franchiseRoyaltyID": {
-                                                    "type": "string"
+                                                    "type": "object", 
+													"properties": {
+														"clause": {
+															"type": "string",
+															"enum": [
+																"EQUAL",
+																"IN"
+															]
+														},
+														"values": {
+															"type": "array"
+														}
+													}
                                                 }
                                             }
                                         },
                                         {
                                             "properties": {
                                                 "franchiseeNo": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "properties": {
-                                                "dateReceived": {
-                                                    "type": "string"
+                                                    "type": "object",
+													"properties": {
+														"clause": {
+															"type": "string",
+															"enum": [
+																"EQUAL",
+																"IN"
+															]
+														},
+														"values": {
+															"type": "array"
+														}
+													}
                                                 }
                                             }
                                         }
@@ -4460,7 +4477,7 @@
 			"Memos"
 		  ],
 		  "summary": "Retrieve Memos",
-		  "description": "<p class=\"western\">You can retrieve an existing memo by making a POST request to the specified endpoint.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-finance/memos/filter</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-finance/memos/filter</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> </li></ol><p> Our system now allows a user to link debit memos with invoices. Therefore, you will now be able to specifically retrieve debit memos on the basis of <b>franchiseRoyaltyID</b>. Please refer to the contraints table below to understand what clauses you can use with franchiseRoyaltyID.</p><p class=\"western\">The constraints that would be used to filter out the memos must be included in the body of the request. In the example that is included, the “franchiseeNo” has been used as a ‘constraints’ criterion. Other acceptable values of constraints, that can be used to filter and retrieve memos, are explained in the following table:</p><center> <table width=\"735\" cellspacing=\"0\" cellpadding=\"7\"> <colgroup> <col width=\"134\" /> <col width=\"253\" /> <col width=\"223\" /> <col width=\"66\" /> </colgroup> <tbody> <tr valign=\"top\"> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"134\" height=\"30\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Field</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"253\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Field Display Name</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"223\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Applicable Clauses</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"66\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Format</strong></span></p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>memoID</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the Memo</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\" height=\"9\"> <p class=\"western\"><strong>franchiseeNo</strong></p> </td> <td width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the location</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>memoType</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Type of memo. Can either be Credit or Debit</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\" height=\"85\"> <p class=\"western\"><strong>memoDate</strong></p> </td> <td width=\"253\"> <p class=\"western\">Memo Date in YYYY-MM-DD format</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN,</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td width=\"66\"> <p class=\"western\">Date</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>openBalance</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Open Balance Amount of memo as seen in UI</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">Double</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\"> <p class=\"western\"><strong>lastModifiedDate</strong></p> </td> <td width=\"253\"> <p class=\"western\">Last Modified </p> <p class=\"western\">Date in YYYY-</p> <p class=\"western\">MM-DD format</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td width=\"66\"> <p class=\"western\">Date</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>franchiseRoyaltyID</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the Royalty Invoice</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> </tbody> </table></center><p class=\"western\">&nbsp;</p><img src=\"images/Retrieve_Memos.PNG\">",
+		  "description": "<p class=\"western\">You can retrieve an existing memo by making a POST request to the specified endpoint.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>POST</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-finance/memos/filter</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-finance/memos/filter</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;.</p> </li></ol><p> Our system now allows a user to link debit memos with invoices. Therefore, you will now be able to specifically retrieve memos on the basis of <b>franchiseRoyaltyID</b>. Please refer to the contraints table below to understand what clauses you can use with franchiseRoyaltyID.</p><p class=\"western\">The constraints that would be used to filter out the memos must be included in the body of the request. In the example that is included, the “franchiseeNo” has been used as a ‘constraints’ criterion. Other acceptable values of constraints, that can be used to filter and retrieve memos, are explained in the following table:</p><center> <table width=\"735\" cellspacing=\"0\" cellpadding=\"7\"> <colgroup> <col width=\"134\" /> <col width=\"253\" /> <col width=\"223\" /> <col width=\"66\" /> </colgroup> <tbody> <tr valign=\"top\"> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"134\" height=\"30\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Field</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"253\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Field Display Name</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"223\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Applicable Clauses</strong></span></p> </td> <td style=\"background: #4472c4;\" bgcolor=\"#4472c4\" width=\"66\"> <p class=\"western\"><span style=\"color: #ffffff;\"><strong>Format</strong></span></p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>memoID</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the Memo</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\" height=\"9\"> <p class=\"western\"><strong>franchiseeNo</strong></p> </td> <td width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the location</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>memoType</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Type of memo. Can either be Credit or Debit</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\" height=\"85\"> <p class=\"western\"><strong>memoDate</strong></p> </td> <td width=\"253\"> <p class=\"western\">Memo Date in YYYY-MM-DD format</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN,</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td width=\"66\"> <p class=\"western\">Date</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>openBalance</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Open Balance Amount of memo as seen in UI</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">Double</p> </td> </tr> <tr valign=\"top\"> <td width=\"134\"> <p class=\"western\"><strong>lastModifiedDate</strong></p> </td> <td width=\"253\"> <p class=\"western\">Last Modified </p> <p class=\"western\">Date in YYYY-</p> <p class=\"western\">MM-DD format</p> </td> <td width=\"223\"> <p class=\"western\">EQUAL, GREATER_THAN</p> <p class=\"western\">LESS_THAN, GREATER_THAN_OR_EQUAL,</p> <p class=\"western\">LESS_THAN_OR_EQUAL, BETWEEN</p> </td> <td width=\"66\"> <p class=\"western\">Date</p> </td> </tr> <tr valign=\"top\"> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"134\"> <p class=\"western\"><strong>franchiseRoyaltyID</strong></p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"253\"> <p class=\"western\">Internal Unique Reference Number of the Royalty Invoice</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"223\"> <p class=\"western\">EQUAL, IN</p> </td> <td style=\"background: #d9e2f3;\" bgcolor=\"#d9e2f3\" width=\"66\"> <p class=\"western\">String</p> </td> </tr> </tbody> </table></center><p class=\"western\">&nbsp;</p><img src=\"images/Retrieve_Memos.PNG\">",
 		  "operationId": "Retrieve_Memos",
 		  "consumes": [
 			"application/json"
@@ -5025,6 +5042,43 @@
 				  "description": "Not Found"
 				}
 			  }
+			}
+		},
+		"company-management/v1/companies/{companyId}": {
+			"get": {
+				"tags": [
+					"Company"
+				],
+				"summary": "Retrieve Company By Id",
+				"description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve the details of a company. The endpoint requires <b>companyId</b> as a path parameter.</p><p> <b>Note:</b> Along with retrieving the primary information of a company (also referred to as an Entity), this endpoint retrieves information corresponding to custom fields created under Entity Details section, and can be found inside the object <b>customFields</b>.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/company-management/v1/companies/{companyId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/company-management/v1/companies/{companyId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Company_By_Id.png\"></ol>",
+				"operationId": "Retrieve_Company_By_Id",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "companyId",
+						"schema": {
+							"type": "string"
+						},
+						"required": true
+					}
+				],
+				"responses": {
+					"200": {
+					  "$ref": "#/components/responses/RetrieveCompanyByIdResp"
+					},
+					"401": {
+					  "description": "Unauthorized"
+					},
+					"403": {
+					  "description": "Forbidden"
+					},
+					"404": {
+					  "description": "Not Found"
+					}
+				  }
 			}
 		},
 	  "/company-management/v1/companies?view=drop-down" : {
@@ -9449,7 +9503,8 @@
                     }
                 }
             }
-        }
+        },
+		"description": "Successful"
       },
 	  "RetrieveRoyaltyPaymentResp": {
 		"content": {
@@ -11841,6 +11896,71 @@
 			}
 			}
 		  }
+		},
+		"description": "Successful"
+	  },
+	  "RetrieveCompanyByIdResp": {
+		"content": {
+			"application/json": {
+				"example": {
+					"tenantContext": {
+						"tenantId": "qamsa6.franconnectqa.net",
+						"userId": "adm"
+					},
+					"data": [
+						{
+							"companyId": "1066711118",
+							"companyName": "XYZ Enterprises",
+							"areas": [
+								{
+									"id": "1940365061",
+									"name": "South Region"
+								},
+								{
+									"id": "388037787",
+									"name": "FC Region"
+								}
+							],
+							"address": {
+								"streetAddress": "46-B Clinton Street, Iowa City",
+								"city": "Iowa City",
+								"country": {
+									"id": "1",
+									"name": "USA"
+								},
+								"zipcode": ""
+							},
+							"formationDetails": {
+								"country": {
+									"id": "1",
+									"name": "USA"
+								},
+								"date": "0000-00-00"
+							},
+							"createdOn": "2022-10-17 05:23:32",
+							"customFields": [
+								{
+									"fieldDisplayName": "Franchise No (Custom Field)",
+									"fieldName": "_FRANCHISE_NO_CUSTOM_FIELD_1054513536",
+									"fieldValue": "44567"
+								},
+								{
+									"fieldDisplayName": "ABN (Custom Field 2)",
+									"fieldName": "_ABN_CUSTOM_FIELD_2_427667771",
+									"fieldValue": "1234567-B07A"
+								}
+							],
+							"links": [
+								{
+									"rel": "self",
+									"action": "get",
+									"href": "https://api.franconnectqa.net/company-management/v1/companies/1066711118"
+								}
+							]
+						}
+					]
+				}
+			}
 		},
 		"description": "Successful"
 	  },
