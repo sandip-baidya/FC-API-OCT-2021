@@ -1345,21 +1345,7 @@
             ],
             "summary": "Retrieve Franchise By Id",
             "description": "<p class=\"western\">Make a GET request to the specified endpoint to retrieve the Center Info details of a franchise. The endpoint requires <b>franchiseId</b> as a path parameter.</p><p> <b>Note:</b> Along with retrieving the primary information of a franchise (also referred to as a Unit), this endpoint retrieves information corresponding to custom fields created in the Center Info section, and can be found inside the object <b>customFields</b>.</p><table width=\"100%\" class=\"endpoint-table\"> <tr> <td width=\"25%\"><strong>Operation Name</strong></td> <td width=\"1%\">:</td> <td>GET</td> </tr> <tr> <td><strong>Production API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnect.net/manage-unit/v1/units/{franchiseId}</td> </tr> <tr> <td><strong>UAT API Endpoint</strong></td> <td>:</td> <td valign=\"top\">https://skyapi.franconnectuat.net/manage-unit/v1/units/{franchiseId}</td> </tr></table>The following items must be included in the header of the request:<ol> <li> <p>\"Authorization\" as the key and its value in the format \"Bearer access_token\". This access_token is generated as a part of authentication. Click <u><a href=\"#tag/Authentication\">here</a></u> for details on the steps to generate the access token.</p> </li> <li> <p>&ldquo;Content-Type&rdquo; as the key and its value in the format &ldquo;application/json&rdquo;.</p> </li> <li> <p>&ldquo;X-TenantId&rdquo; as the key and its value based on your FranConnect system&rsquo;s URL. Click <u><a href=\"#tag/Authentication\">here</a></u>&nbsp;for details on identifying the &ldquo;X-TenantId&rdquo;. <p><img src=\"images/Retrieve_Franchise_By_Id.png\"></ol>",
-            "operationId": "Retrieve_Franhise_By_Id",
-            "responses": {
-				"200": {
-				  "$ref": "#/components/responses/RetrieveFranchiseByIdResp"
-				},
-				"401": {
-				  "description": "Unauthorized"
-				},
-				"403": {
-				  "description": "Forbidden"
-				},
-				"404": {
-				  "description": "Not Found"
-				}
-        }
+            "operationId": "Retrieve_Franchise_By_Id"
       }
     },
 	  "/create?module=regional&subModule=areaInfo":{
