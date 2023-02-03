@@ -1360,7 +1360,8 @@
 				  "description": "Not Found"
 				}
         }
-      },
+      }
+    },
 	  "/create?module=regional&subModule=areaInfo":{
 		"post": {
 			"tags": [
