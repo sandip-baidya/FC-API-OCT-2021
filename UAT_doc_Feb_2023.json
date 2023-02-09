@@ -1351,7 +1351,7 @@
                 "parameters": [
                     {
                         "in": "path",
-                        "name": "franchise",
+                        "name": "franchiseId",
                         "schema": {
                             "type": "string"
                         },
