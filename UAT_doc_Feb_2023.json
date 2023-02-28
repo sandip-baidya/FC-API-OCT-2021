@@ -7495,7 +7495,16 @@
             "FSUpdateLeadArray": {
                 "content": {
                     "application/xml": {
-                        "example": "<?xml version='1.0' encoding='utf-8'?>\n<fcRequest>\n<fsLead>\n<referenceId>1440427898</referenceId>\n<firstName>Adrian</firstName>\n</fsLead>\n</fcRequest>",
+                        "examples": {
+                            "example1" : {
+                                "summary": "Update Lead's Primary Info.",
+                                "value": "<?xml version='1.0' encoding='utf-8'?>\n<fcRequest>\n<fsLead>\n<referenceId>1440427898</referenceId>\n<firstName>Adrian</firstName>\n</fsLead>\n</fcRequest>"
+                            },
+                            "example2":{
+                                "summary": "Update Lead's Status With Status Change Reason",
+                                "value": "<fcRequest>\n<fsLead>\n<referenceId>371549658</referenceId>\n<leadStatusID>Connected</leadStatusID>\n<leadKilledReason>\nLead connected through to HQ</leadKilledReason>\n<leadKilledReasonComment>\nLead status changed to Connected. Proceed to the next step in the pipeline\n</leadKilledReasonComment>\n</fsLead>\n</fcRequest>\n"
+                            }
+                        },
                         "schema": {
                             "type": "array",
                             "items": {
