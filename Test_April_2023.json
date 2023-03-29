@@ -187,8 +187,8 @@
             "description": "<p>FranConnect System now supports Webhook to pass information from FranConnect’s Info Mgr to another web application about a location.</p>"
         },
         {
-            "name": "Operations Webhook",
-            "description": "<p>FranConnect System now supports Webhooks to pass information from FranConnect's Operations module to another web application about segments, segment categories and custom segment fields.</p>"
+            "name": "Segments Webhook",
+            "description": "<p>FranConnect System now supports Webhooks to pass information from FranConnect's segment module to another web application about segments, segment categories and custom segment fields.</p>"
         }
     ],
     "x-tagGroups": [
@@ -257,8 +257,7 @@
                 "Sales Webhook",
                 "Lead",
                 "INFO MANAGER WEBHOOK",
-                "Operations Webhook",
-                "Segment",
+                "Segments Webhook",
                 "FRANCHISE",
                 "CRM Webhook",
                 "LEAD/CONTACT"
@@ -7160,7 +7159,7 @@
         "/{Customer_IMWebhook_URL_Segment}": {
             "post": {
                 "tags": [
-                    "Segment"
+                    "Segments Webhook"
                 ],
                 "summary": "Segment",
                 "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segments:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <br> In just 5 minutes the information is pushed to the endpoint provided by you.</p><p>Furthermore, if multiple events are triggered within the given 5 minutes period across the segments of your system, you will receive an array of JSON objects. The reference to all the events mentioned above can be found under Response Samples.<p>",
@@ -7238,7 +7237,7 @@
         "/{Customer_IMWebhook_URL_Segment_Category}": {
             "post": {
                 "tags": [
-                    "Segment"
+                    "Segments Webhook"
                 ],
                 "summary": "Segment category",
                 "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segment categories:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <br> In just 5 minutes the information is pushed to the endpoint provided by you.</p><p>Furthermore, if multiple events are triggered within the given 5 minutes period across the segment categories of your system, you will receive an array of JSON objects. The reference to all the events mentioned above can be found under Response Samples.<p>",
@@ -7307,7 +7306,7 @@
         "/{Customer_IMWebhook_URL_Custom_Segment_Field}": {
             "post": {
                 "tags": [
-                    "Segment"
+                    "Segments Webhook"
                 ],
                 "summary": "Custom Segment Field",
                 "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to custom segment fields:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <br> In just 5 minutes the information is pushed to the endpoint provided by you.</p><p>Furthermore, if multiple events are triggered within the given 5 minutes period across the custom segment fields of your system, you will receive an array of JSON objects. The reference to all the events mentioned above can be found under Response Samples.<p>",
