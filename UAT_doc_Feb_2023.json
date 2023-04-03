@@ -8776,8 +8776,7 @@
                     "application/xml": {
                             "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1205701239</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
                         }
-                    }
-                },
+                    },
                 "description": "Successful"
             },
             "RetrieveAreaRegionTabResp": {
