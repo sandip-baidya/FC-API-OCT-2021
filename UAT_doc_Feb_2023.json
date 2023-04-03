@@ -185,6 +185,10 @@
         {
             "name": "INFO MANAGER WEBHOOK",
             "description": "<p>FranConnect System now supports Webhook to pass information from FranConnect’s Info Mgr to another web application about a location.</p>"
+        },
+        {
+            "name": "Segments Webhook",
+            "description": "<p>FranConnect System now supports Webhooks to pass information from FranConnect's segment module to another web application about segments, segment categories and custom segment fields.</p>"
         }
     ],
     "x-tagGroups": [
@@ -253,6 +257,7 @@
                 "Sales Webhook",
                 "Lead",
                 "INFO MANAGER WEBHOOK",
+                "Segments Webhook",
                 "FRANCHISE",
                 "CRM Webhook",
                 "LEAD/CONTACT"
@@ -1402,7 +1407,17 @@
                 "requestBody": {
                     "content": {
                         "application/xml": {
-                            "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalAreaInfo>\n<parentReferenceId>130544557</parentReferenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<email>test@gmail.com</email>\n</regionalAreaInfo>\n</fcRequest>\n",
+                            "examples": {
+                                "createAreaRegion": {
+                                    "summary": "Create New Area/Region",
+                                    "value": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcRequest>\n<regionalAreaInfo>\n<parentReferenceId>130544557</parentReferenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<email>test@gmail.com</email>\n</regionalAreaInfo>\n</fcRequest>\n",
+                                    
+                                },
+                                "createNewEntityInRegional": {
+                                    "summary": "Create New Entity for an Area/Region",
+                                    "value": "<fcRequest>\n <regionalEntityDetails>\n <parentReferenceId>130544557</parentReferenceId>\n <entityType>New</entityType>\n <fimTtEntityName>New Company LLC Sample</fimTtEntityName>\n <fimDdDateOfFormation>2023-01-11</fimDdDateOfFormation>\n <fimCbEntityType>Limited Liability Company</fimCbEntityType>\n <clientEntityID>SampleLLC01</clientEntityID>\n </regionalEntityDetails>\n</fcRequest>\n"
+                                }
+                            },
                             "schema": {
                                 "type": "array",
                                 "items": {
@@ -7151,6 +7166,222 @@
                 }
             }
         },
+        "/{Customer_IMWebhook_URL_Segment}": {
+            "post": {
+                "tags": [
+                    "Segments Webhook"
+                ],
+                "summary": "Segment",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segments:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "operationId": "Segment_Webhook",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "create": {
+                                        "summary": "Create",
+                                        "value": {
+                                            "entityType": "segment",
+                                            "eventType": "create",
+                                            "entityId": "1569275889",
+                                            "entityName": "Pre Transfer SB",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:41:54Z",
+                                            "userNo": "1",
+                                            "additionalAttributes": {
+                                              "customSegmentId": "398"
+                                            }
+                                          }
+                                    },
+                                    "update": {
+                                        "summary": "Update",
+                                        "value": {
+                                            "entityType": "segment",
+                                            "eventType": "update",
+                                            "entityId": "1569275889",
+                                            "entityName": "Pre Transfer SB updated",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:42:45Z",
+                                            "userNo": "1",
+                                            "additionalAttributes": {
+                                              "customSegmentId": "398"
+                                            }
+                                          }
+                                    },
+                                    "delete": {
+                                        "summary": "delete",
+                                        "value": {
+                                            "entityType": "segment",
+                                            "eventType": "delete",
+                                            "entityId": "1569275889",
+                                            "entityName": "Pre Transfer SB updated",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:42:45Z",
+                                            "userNo": "1",
+                                            "additionalAttributes": {
+                                              "customSegmentId": "398"
+                                            }
+                                          }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/{Customer_IMWebhook_URL_Segment_Category}": {
+            "post": {
+                "tags": [
+                    "Segments Webhook"
+                ],
+                "summary": "Segment category",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segment categories:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "operationId": "Segment_Category_Webhook",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "create": {
+                                        "summary": "Create",
+                                        "value": {
+                                            "entityType": "segmentCategory",
+                                            "eventType": "create",
+                                            "entityId": "770915990983677771",
+                                            "entityName": "SB-cat",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:44:55Z",
+                                            "userNo": "1"
+                                          }
+                                    },
+                                    "update": {
+                                        "summary": "Update",
+                                        "value":{
+                                            "entityType": "segmentCategory",
+                                            "eventType": "create",
+                                            "entityId": "770915990983677771",
+                                            "entityName": "SB-cat (updated)",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:44:55Z",
+                                            "userNo": "1"
+                                          }
+                                    },
+                                    "delete": {
+                                        "summary": "delete",
+                                        "value": {
+                                            "entityType": "segmentCategory",
+                                            "eventType": "delete",
+                                            "entityId": "770915990983677771",
+                                            "entityName": "SB-cat",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:44:55Z",
+                                            "userNo": "1"
+                                          }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/{Customer_IMWebhook_URL_Custom_Segment_Field}": {
+            "post": {
+                "tags": [
+                    "Segments Webhook"
+                ],
+                "summary": "Custom Segment Field",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to custom segment fields:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "operationId": "Custom_Segment_Field_Webhook",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "create": {
+                                        "summary": "Create",
+                                        "value":{
+                                            "entityType": "customSegmentField",
+                                            "eventType": "create",
+                                            "entityId": "770916427526838091",
+                                            "entityName": "ABN No.",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:46:39Z",
+                                            "userNo": "1"
+                                          }
+                                    },
+                                    "update": {
+                                        "summary": "Update",
+                                        "value":{
+                                            "entityType": "customSegmentField",
+                                            "eventType": "create",
+                                            "entityId": "770916427526838091",
+                                            "entityName": "ABN No. (Updated)",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:46:39Z",
+                                            "userNo": "1"
+                                          }
+                                    },
+                                    "delete": {
+                                        "summary": "delete",
+                                        "value": {
+                                            "entityType": "customSegmentField",
+                                            "eventType": "create",
+                                            "entityId": "770916427526838091",
+                                            "entityName": "ABN No.",
+                                            "entityState": "active",
+                                            "eventDateTime": "2023-03-29T07:46:39Z",
+                                            "userNo": "1"
+                                          }
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
         "/{customer_CRMwebhook_URL}": {
             "post": {
                 "tags": [
@@ -8543,7 +8774,8 @@
             "CreateAreaRegionTabResp": {
                 "content": {
                     "application/xml": {
-                        "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1205701239</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
+                            "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>1205701239</responseId>\n<responseData>\n<regionalAreaInfo>\n<status>Success</status>\n<referenceId>1375193751</referenceId>\n</regionalAreaInfo>\n</responseData>\n</fcResponse>\n"
+                        }
                     }
                 },
                 "description": "Successful"
@@ -8551,7 +8783,16 @@
             "RetrieveAreaRegionTabResp": {
                 "content": {
                     "application/xml": {
-                        "example": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>53162373</responseId>\n<responseData>\n<adminAreaRegion>\n<referenceId>130544557</referenceId>\n<areaName>V Region</areaName>\n<regionalAreaInfo>\n<referenceId>1375193751</referenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<approvedDate/>\n<initialFee/>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<consecutive/>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<zipCode/>\n<phone/>\n<extn/>\n<fax/>\n<mobile/>\n<email>test@gmail.com</email>\n<transferFee/>\n<renewalFee/>\n<renewalOptions/>\n<initialFeePercentage/>\n<operatingFeePercentage/>\n<transferFeePercentage/>\n<renewalFeePercentage/>\n<notes/>\n</regionalAreaInfo>\n</adminAreaRegion>\n</responseData>\n</fcResponse>\n"
+                        "examples":{
+                            "retrieveAreaRegion": {
+                                "summary": "Retrieve Area/Region",
+                                "value": "<?xmlversion='1.0'encoding='utf-8'?>\n<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>53162373</responseId>\n<responseData>\n<adminAreaRegion>\n<referenceId>130544557</referenceId>\n<areaName>V Region</areaName>\n<regionalAreaInfo>\n<referenceId>1375193751</referenceId>\n<licenseType>New License</licenseType>\n<agreementType>Area Franchisee</agreementType>\n<approvedDate/>\n<initialFee/>\n<effectiveDate>2022-03-01</effectiveDate>\n<expirationDate>2023-03-01</expirationDate>\n<consecutive/>\n<address>41C, Clinton Street</address>\n<city>Iowa City</city>\n<country>USA</country>\n<state>Iowa</state>\n<zipCode/>\n<phone/>\n<extn/>\n<fax/>\n<mobile/>\n<email>test@gmail.com</email>\n<transferFee/>\n<renewalFee/>\n<renewalOptions/>\n<initialFeePercentage/>\n<operatingFeePercentage/>\n<transferFeePercentage/>\n<renewalFeePercentage/>\n<notes/>\n</regionalAreaInfo>\n</adminAreaRegion>\n</responseData>\n</fcResponse>\n"
+                            },
+                            "retrieveEntityOfRegional":{
+                                "summary": "Retrieve Entities Associated With Area/Region",
+                                "value": "<fcResponse>\n<responseStatus>Success</responseStatus>\n<responseId>2060013456</responseId>\n<responseData>\n<adminAreaRegion>\n<referenceId>130544557</referenceId>\n<areaName>Midwest</areaName>\n<regionalEntityDetails>\n<referenceId>1366929485</referenceId>\n<fimTtEntityName>SCT LLC</fimTtEntityName>\n<clientEntityID/>\n<fimEntityDetail0>USA </fimEntityDetail0>\n<fimCbCountryOfFormation>USA</fimCbCountryOfFormation>\n<fimCbStateOfFormation/>\n<fimDdDateOfFormation/>\n<fimTtTaxpayer/>\n<fimCbEntityType/>\n<fimCbOtherEntityType/>\n<fimEntityDetailDoc0/>\n<fimEntityDetailDoc1/>\n</regionalEntityDetails>\n<regionalEntityDetails>\n<referenceId>2064190700</referenceId>\n<fimTtEntityName>SB Corp.</fimTtEntityName>\n<clientEntityID>SB-prise-01</clientEntityID>\n<fimCbCountryOfFormation>USA</fimCbCountryOfFormation>\n<fimCbStateOfFormation>California</fimCbStateOfFormation>\n<fimDdDateOfFormation/>\n<fimTtTaxpayer/>\n<fimCbEntityType/>\n<fimCbOtherEntityType/>\n<fimEntityDetailDoc0/>\n<fimEntityDetailDoc1/>\n</regionalEntityDetails>\n<regionalEntityDetails>\n<referenceId>1451658464</referenceId>\n<fimTtEntityName>Sample LLC</fimTtEntityName>\n<clientEntityID>SBLLC01</clientEntityID>\n<fimEntityDetail0>USA </fimEntityDetail0>\n<fimCbCountryOfFormation>USA</fimCbCountryOfFormation>\n<fimCbStateOfFormation/>\n<fimDdDateOfFormation/>\n<fimTtTaxpayer/>\n<fimCbEntityType/>\n<fimCbOtherEntityType/>\n<fimEntityDetailDoc0/>\n<fimEntityDetailDoc1/>\n</regionalEntityDetails>\n</adminAreaRegion>\n</responseData>\n</fcResponse>\n"
+                            }
+                        }
                     }
                 },
                 "description": "Successful"
