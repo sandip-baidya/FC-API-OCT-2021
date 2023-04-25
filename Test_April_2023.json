@@ -7172,7 +7172,7 @@
                     "Segments Webhook"
                 ],
                 "summary": "Segment",
-                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segments:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that can receive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature is enabled, the following events are captured corresponding to segments:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
                 "operationId": "Segment_Webhook",
                 "produces": [
                     "application/json"
@@ -7250,7 +7250,7 @@
                     "Segments Webhook"
                 ],
                 "summary": "Segment category",
-                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to segment categories:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that can receive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature is enabled, the following events are captured corresponding to segment categories:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
                 "operationId": "Segment_Category_Webhook",
                 "produces": [
                     "application/json"
@@ -7319,7 +7319,7 @@
                     "Segments Webhook"
                 ],
                 "summary": "Custom Segment Field",
-                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that canreceive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature isenabled, the following events are captured corresponding to custom segment fields:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
+                "description": "To enable this feature, you can send an email to helpdesk@franconnect.com and share the webhook URL(an endpoint that can receive arrays of events as JSON objects) where the updates can be pushed in the JSON format. Once this feature is enabled, the following events are captured corresponding to custom segment fields:-<ul> <li>Create</li> <li>Update</li> <li>Delete</li></ul> <p> The captured events will be sent in real-time to the specified webhook URL in JSON format. The reference to all the events mentioned above can be found under Response Samples.</p>",
                 "operationId": "Custom_Segment_Field_Webhook",
                 "produces": [
                     "application/json"
